@@ -13,16 +13,10 @@ int main()
     float galutinisVid = 0;
     float mediana = 0;
     char menu;
-    int markNum;
-    int randExMark;
-    int randMark;
-	int strategy;
     bool check = true;
     bool sortType = 1;
 
-    wstring name, surname;
-	vector<int> marks;
-    int examMark;
+ 
 
 	wstring inputFileName;
     wstring outputFileName;
@@ -30,7 +24,6 @@ int main()
     std::ofstream test;
 
     while (check == true) {
-		marks.clear();
         wcout << "---------------------------------\nMENU\n";
         wcout << L"1 - ranka įvesti duomenis\n2 - generuoti pažymius\n3 - generuoti ir pažymius ir studentų vardus, pavardės\n4 - įvesti duomenis iš failo\n5 - testavimas\n6 - baigti darbą\n---------------------------------\n";
         cin >> menu;
@@ -88,18 +81,18 @@ int main()
         switch (menu)
         {
         case('1'):
-            sort(kietiakai.begin(), kietiakai.end(), [](const Student& s1, const Student& s2) -> bool {
+            sort(kietiakai.begin(), kietiakai.end(), []( Student& s1,  Student& s2) -> bool {
 				return s1.getName() < s2.getName();
                 });
-            sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
+            sort(vargsiukai.begin(), vargsiukai.end(), []( Student& s1,  Student& s2) -> bool {
                 return s1.getName() < s2.getName();
                 });
             break;
         case('2'):
-            sort(kietiakai.begin(), kietiakai.end(), [](const Student & s1, const Student & s2) -> bool {
+            sort(kietiakai.begin(), kietiakai.end(), []( Student & s1, Student & s2) -> bool {
                 return s1.getSurname() < s2.getSurname();
             });
-            sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
+            sort(vargsiukai.begin(), vargsiukai.end(), []( Student& s1, Student& s2) -> bool {
                 return s1.getSurname() < s2.getSurname();
                 });
             break;

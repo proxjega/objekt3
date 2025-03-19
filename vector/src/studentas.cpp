@@ -50,13 +50,13 @@ Student::~Student() {
 	finalMedian_ = 0;
 }
 
-double Student::calculateFinalMean() const {
-	const vector<int>marks = getMarks();
+float Student::calculateFinalMean() const {
+	vector<int> marks = getMarks();
     return 0.4 * ((std::accumulate(marks.begin(), marks.end(), 0) * 1.0) / (marks.size() * 1.0)) + 0.6 * examMark_;
 }
 
-double Student::calculateFinalMedian() const {
-	const vector<int>marks = getMarks();
+float Student::calculateFinalMedian() const {
+	vector<int> marks = getMarks();
     float median = 0;
     std::sort(marks.begin(), marks.end());
     (marks.size() % 2 != 0) ? median = marks[marks.size() / 2] : median = (marks[marks.size() / 2] + marks[marks.size() / 2 - 1]) / 2.0;

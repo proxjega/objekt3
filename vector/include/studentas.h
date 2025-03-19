@@ -20,7 +20,7 @@ private:
 	float finalMean_;
 	float finalMedian_;
 public:
-    Student() : name_(L""), surname_(L""), marks_(1), examMark_(1) {}
+    Student() : name_(L""), surname_(L""), marks_(1), examMark_(1), finalMean_(1), finalMedian_(1){}
     Student(int pazymiuSk);
     Student(wstring name, wstring surname, int pazymiuSk);
     Student(wstring name, wstring surname, vector<int> marks, int examMark);
@@ -36,8 +36,8 @@ public:
     void setMarks(std::vector<int> marks) { marks_ = marks; }
     void setExamMark(int examMark) { examMark_ = examMark; }
 
-    double calculateFinalMean() const;
-    double calculateFinalMedian() const;
+    float calculateFinalMean() const;
+    float calculateFinalMedian() const;
     //std::istream& readStudent(std::istream&);
 };
 

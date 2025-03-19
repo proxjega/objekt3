@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "studentas.h"
+#include "mylibrary.h"
 
 template <class T>
 void Readfile(std::wifstream& inputFile, T& grupe) { //skaitymas is failo
@@ -17,17 +17,17 @@ void Readfile(std::wifstream& inputFile, T& grupe) { //skaitymas is failo
         if (buffer.eof()) {
             break;
         }
-        Student student;
-        buffer >> student.surname >> student.name;
-        int mark = 0;
+		wstring name, surname;
+        vector<int> marks;
+        int mark, examMark; 
+        buffer >> surname >> name;
         for (int i = 0; i < counter - 3; i++) {
             buffer >> mark;
-            student.marks.push_back(mark);
+            marks.push_back(mark);
         }
         buffer >> mark;
-        student.examMark = mark;
-        student.vid = Mean(student);
-        student.median = Median(student);
+        examMark = mark;
+		Student student(name, surname, marks, examMark);
         grupe.push_back(student);
     }
 }
@@ -36,7 +36,7 @@ template <class arr1, class arr2, class arr3>
 void SortStudentsInGroups(arr1& kietiakai, arr2& vargsiukai, arr3& group, bool sortType) { //sorting function
     for (int i = 0; i < group.size(); i++) {
         if (sortType == 1) {
-            if (group[i].vid < 5.0) {
+            if (group[i].calculateFinalMean() < 5.0) {
                 vargsiukai.push_back(group[i]);
             }
             else {
@@ -44,7 +44,7 @@ void SortStudentsInGroups(arr1& kietiakai, arr2& vargsiukai, arr3& group, bool s
             }
         }
         else {
-            if (group[i].median < 5.0) {
+            if (group[i].calculateFinalMedian() < 5.0) {
                 vargsiukai.push_back(group[i]);
             }
             else {
@@ -60,7 +60,7 @@ template <class arr1, class arr2>
 void SortStudentsInGroups2(arr1& vargsiukai, arr2& group, bool sortType) { //sorting function
     for (auto it = group.begin(); it != group.end(); ) {
         if (sortType == 1) {
-            if (it->vid < 5.0) {
+            if (it->calculateFinalMean() < 5.0) {
                 vargsiukai.push_back(*it);
                 it = group.erase(it);
             }
@@ -69,7 +69,7 @@ void SortStudentsInGroups2(arr1& vargsiukai, arr2& group, bool sortType) { //sor
             }
         }
         else {
-            if (it->median < 5.0) {
+            if (it->calculateFinalMedian() < 5.0) {
                 vargsiukai.push_back(*it);
                 it = group.erase(it);
             }
@@ -86,9 +86,9 @@ void PrintIntoFile(T& group, wstring fileName) {
     output << setw(17) << left << L"Pavardė" << setw(17) << left << L"Vardas" << setw(20) << left << "Galutinis(vid.)" << setw(15) << left << "Galutinis(med.)\n";
     output << "-----------------------------------------------------------------------------------\n";
     for (int i = 0; i < group.size(); i++) {
-        output << setw(17) << left << group[i].surname << setw(17) << left
-            << group[i].name << setw(20) << left << setprecision(2) << fixed
-            << group[i].vid << setw(15) << left << setprecision(2) << fixed << group[i].median << L"\n";
+        output << setw(17) << left << group[i].getSurname() << setw(17) << left
+            << group[i].getName() << setw(20) << left << setprecision(2) << fixed
+            << group[i].calculateFinalMean() << setw(15) << left << setprecision(2) << fixed << group[i].calculateFinalMedian() << L"\n";
     }
     std::wofstream outputFile(fileName);
     outputFile.imbue(std::locale(outputFile.getloc(), new std::codecvt_utf8<wchar_t>));
@@ -157,8 +157,12 @@ void TestFunction(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
         SortStudentsInGroups(kietiakai, vargsiukai, grupe, 1);
         grupe.clear();
         grupe.shrink_to_fit();
-        sort(kietiakai.begin(), kietiakai.end(), CompareByVid);
-        sort(vargsiukai.begin(), vargsiukai.end(), CompareByVid);
+        sort(kietiakai.begin(), kietiakai.end(), [](const Student& s1, const Student& s2) -> bool {
+            return s1.calculateFinalMean() < s2.calculateFinalMean();
+            });
+        sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
+            return s1.calculateFinalMean() < s2.calculateFinalMean();
+            });
         std::chrono::time_point<std::chrono::system_clock> endSorting = std::chrono::system_clock::now();
 
         std::chrono::time_point<std::chrono::system_clock> startOutput = std::chrono::system_clock::now();
@@ -251,8 +255,12 @@ void TestFunction2(arr1& grupe, arr2& vargsiukai) {
 
         std::chrono::time_point<std::chrono::system_clock> startSorting = std::chrono::system_clock::now();
         SortStudentsInGroups2(vargsiukai, grupe, 1);
-		sort(grupe.begin(), grupe.end(), CompareByVid);
-		sort(vargsiukai.begin(), vargsiukai.end(), CompareByVid);
+        sort(grupe.begin(), grupe.end(), [](const Student& s1, const Student& s2) -> bool {
+            return s1.calculateFinalMean() < s2.calculateFinalMean();
+            });
+        sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
+            return s1.calculateFinalMean() < s2.calculateFinalMean();
+            });
         std::chrono::time_point<std::chrono::system_clock> endSorting = std::chrono::system_clock::now();
 
         std::chrono::time_point<std::chrono::system_clock> startOutput = std::chrono::system_clock::now();
