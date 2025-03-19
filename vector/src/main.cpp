@@ -11,8 +11,6 @@ int main()
     srand(time(NULL));
 
     vector<Student> grupe, vargsiukai, kietiakai;
-    wstring names[10] = { L"name1", L"name2", L"name3", L"name4", L"name5", L"name6", L"name7", L"name8", L"name9", L"name10",};
-    wstring surnames[10] = { L"surname1", L"surname2", L"surname3", L"surname4", L"surname5", L"surname6", L"surname7",  L"surname8", L"surname9", L"surname10"};
     float galutinisVid = 0;
     float mediana = 0;
     char menu;
@@ -22,130 +20,31 @@ int main()
 	int strategy;
     bool check = true;
     bool sortType = 1;
+
+    wstring name, surname;
+	vector<int> marks;
+    int examMark;
+
 	wstring inputFileName;
     wstring outputFileName;
 	wifstream inputFile;
     std::ofstream test;
 
     while (check == true) {
-        Student student;
+		marks.clear();
         wcout << "---------------------------------\nMENU\n";
         wcout << L"1 - ranka įvesti duomenis\n2 - generuoti pažymius\n3 - generuoti ir pažymius ir studentų vardus, pavardės\n4 - įvesti duomenis iš failo\n5 - testavimas\n6 - baigti darbą\n---------------------------------\n";
         cin >> menu;
         switch (menu)
         {
         case('1'):
-			system("cls");
-            wcout << L"Įveskite studento vardą:\n";
-            wcin >> student.name;
-            wcout << L"Įveskite studento pavardę:\n";
-            wcin >> student.surname;
-            wcout << L"Įveskite pažymius (0 - pabaigti)\n";
-            while (true) {
-                try {
-                    int mark = InputMark();
-                    if (mark == 0) {
-                        if (student.marks.size() != 0) {
-                            break;
-                        }
-                        else throw L"\007Įveskite bent vieną pažymį";
-                        continue;
-                    }
-                    student.marks.push_back(mark);
-                }
-                catch (const wchar_t* e) {
-					wcerr << e << endl;
-                    continue;
-                }
-				catch (...) {
-					wcerr << L"\007Nežinoma klaida" << endl;
-					continue;
-				}
-            }
-            wcout << L"Įveskite egzamino pažymį:\n";
-            while (true) {
-                try {
-                    student.examMark = InputExamMark();
-                    break;
-                }
-                catch (const wchar_t* e) {
-                    wcerr << e << endl;
-                    continue;
-                }
-                catch (...) {
-                    wcerr << L"\007Nežinoma klaida" << endl;
-                    continue;
-                }
-            }
-            student.vid = Mean(student);
-            student.median = Median(student);
-            grupe.push_back(student);
+			Case1(grupe);
             break;
         case('2'):
-            system("cls");
-            wcout << L"Įveskite studento vardą:\n";
-            wcin >> student.name;
-            wcout << L"Įveskite studento pavardę:\n";
-            wcin >> student.surname;
-            wcout << L"Kiek pažymių generuoti?\n";
-            while (true) {
-				try {
-					markNum = InputMarkNum();
-					break;
-				}
-				catch (const wchar_t* e) {
-					wcerr << e << endl;
-					continue;
-				}
-				catch (...) {
-					wcerr << L"\007Nežinoma klaida" << endl;
-					continue;
-				}
-            }
-            for (int i = 0; i < markNum; i++) {
-                randMark = rand() % 10 + 1;
-                wcout << L"Generuotas pažymys: " << randMark << "\n";
-                student.marks.push_back(randMark);
-            }
-            randExMark = rand() % 10 + 1;
-            wcout << L"Generuotas egzamino pažymys: " << randExMark << "\n";
-            student.examMark = randExMark;
-            student.vid = Mean(student);
-            student.median = Median(student);
-            grupe.push_back(student);
+			Case2(grupe);
             break;
         case('3'):
-            system("cls");
-            student.name = names[rand() % 5];
-            wcout << L"Generuotas vardas: " << student.name << endl;
-            student.surname = surnames[rand() % 5];
-            wcout << L"Generuota pavardė: " << student.surname << endl;
-            wcout << L"Kiek pažymiu generuoti?\n";
-            while (true) {
-                try {
-                    markNum = InputMarkNum();
-                    break;
-                }
-				catch (const wchar_t* e) {
-					wcerr << e << endl;
-					continue;
-				}
-				catch (...) {
-					wcerr << L"\007Nežinoma klaida" << endl;
-					continue;
-				}
-            }
-            for (int i = 0; i < markNum; i++) {
-                randMark = rand() % 10 + 1;
-                wcout << L"Generuotas pažymys: " << randMark << "\n";
-                student.marks.push_back(randMark);
-            }
-            randExMark = rand() % 10 + 1;
-            wcout << L"Generuotas egzamino pažymys: " << randExMark << "\n";
-            student.examMark = randExMark;
-            student.vid = Mean(student);
-            student.median = Median(student);
-            grupe.push_back(student);
+			Case3(grupe);
             break;
         case('4'):
             system("cls");

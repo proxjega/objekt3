@@ -4,8 +4,11 @@
 #include <numeric>
 #include <algorithm>
 #include <random>
+#include <iostream>
 
 using std::vector;
+using std::wcout;
+using std::endl;
 using std::wstring;
 
 class Student {

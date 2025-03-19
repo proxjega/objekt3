@@ -11,7 +11,11 @@
 #include <chrono>
 #include <locale>
 #include <codecvt>
+#include "studentas.h"
 
+using std::wcin;
+using std::wcout;
+using std::wcerr;
 using std::cin;
 using std::cout;
 using std::endl;
@@ -30,5 +34,8 @@ using std::fixed;
 
 template <class T>
 void Readfile(std::wifstream& inputFile, T& grupe);
-bool CompareByVid(Student a, Student b);
+bool CompareByVid(const Student &a, const Student &b);
 int InputTestNum();
+int InputMark();
+int InputMarkNum();
+int InputExamMark();

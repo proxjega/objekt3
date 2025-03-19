@@ -1,15 +1,10 @@
 #include "../include/studentas.h"
 
-Student::Student(int pazymiuSk) {
-    std::random_device rd;
-    std::mt19937 mt(rd());
-    std::uniform_int_distribution<int> dist(1, 10);
-	for (int i = 0; i < pazymiuSk; i++) {
-		marks_.push_back(dist(mt));
-	}
-	examMark_ = dist(mt);
-	name_ = L"name" + std::to_wstring(dist(mt));
-	surname_ = L"surname" + std::to_wstring(dist(mt));
+Student::Student(wstring name, wstring surname, vector<int> marks, int examMark) {
+	name_ = name;
+	surname_ = surname;
+	marks_ = marks;
+	examMark_ = examMark;
 }
 
 Student::Student(wstring name, wstring surname, int pazymiuSk) {
@@ -18,17 +13,26 @@ Student::Student(wstring name, wstring surname, int pazymiuSk) {
 	std::uniform_int_distribution<int> dist(1, 10);
 	for (int i = 0; i < pazymiuSk; i++) {
 		marks_.push_back(dist(mt));
+		std::cout << "Generuotas pazymys: " << marks_[i] << std::endl;
 	}
 	examMark_ = dist(mt);
 	name_ = name;
 	surname_ = surname;
 }
 
-Student::Student(wstring name, wstring surname, vector<int> marks, int examMark) {
-	name_ = name;
-	surname_ = surname;
-	marks_ = marks;
-	examMark_ = examMark;
+Student::Student(int pazymiuSk) {
+    std::random_device rd;
+    std::mt19937 mt(rd());
+    std::uniform_int_distribution<int> dist(1, 10);
+	for (int i = 0; i < pazymiuSk; i++) {
+		marks_.push_back(dist(mt));
+		std::cout << "Generuotas pazymys: " << marks_[i] << std::endl;
+	}
+	examMark_ = dist(mt);
+	name_ = L"name" + std::to_wstring(dist(mt));
+	wcout << L"Generuotas vardas: " << name_ << endl;
+	surname_ = L"surname" + std::to_wstring(dist(mt));
+	wcout << L"Generuota pavarde: " << surname_ << endl;
 }
 
 Student::~Student() {
