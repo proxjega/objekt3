@@ -99,7 +99,7 @@ void PrintIntoFile(T& group, wstring fileName) {
 template <class arr1, class arr2, class arr3>
 void TestFunction(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
     double readMean = 0, sortMean = 0, printMean = 0, allMean = 0;
-    std::wofstream researchResults("spartos_tyrimas\\class\\tyrimas1StrategijaClass.txt", std::ios::app);
+    std::wofstream researchResults("tyrimas1StrategijaClass.txt", std::ios::app);
     wstringstream output; 
 	wstring containers[] = {L"Vector", L"Deque", L"List"};
     int containerNum = 0;
@@ -131,19 +131,19 @@ void TestFunction(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
     
         std::ofstream testFile;
         if (std::is_same<typename std::decay<decltype(grupe)>::type, std::vector<Student>>::value) {
-            testFile.open("spartos_tyrimas\\class\\tyrimasVector.txt", std::ios::app);
+            testFile.open("tyrimasVectorClass.txt", std::ios::app);
 			containerNum = 0;
         }
         else if (std::is_same<typename std::decay<decltype(grupe)>::type, std::deque<Student>>::value) {
-			testFile.open("spartos_tyrimas\\class\\tyrimasDeque.txt", std::ios::app);
+			testFile.open("tyrimasDequeClass.txt", std::ios::app);
 			containerNum = 1;
         }
         else if (std::is_same<typename std::decay<decltype(grupe)>::type, std::list<Student>>::value) {
-			testFile.open("spartos_tyrimas\\class\\tyrimasList.txt", std::ios::app);
+			testFile.open("tyrimasListClass.txt", std::ios::app);
 			containerNum = 2;
 		}
         else
-            testFile.open("spartos_tyrimas\\class\\tyrimasUnknown.txt", std::ios::app); // Default fallback
+            testFile.open("tyrimasUnknownClass.txt", std::ios::app); // Default fallback
 
     
         testFile << "Programos veikimas: \n";
@@ -200,7 +200,7 @@ void TestFunction(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
 template <class arr1, class arr2>
 void TestFunction2(arr1& grupe, arr2& vargsiukai) {
     double readMean = 0, sortMean = 0, printMean = 0, allMean = 0;
-    std::wofstream researchResults("spartos_tyrimas\\class\\tyrimas2Strategija.txt", std::ios::app);
+    std::wofstream researchResults("tyrimas2StrategijaClass.txt", std::ios::app);
     wstringstream output;
     wstring containers[] = { L"Vector", L"Deque", L"List" };
     int containerNum = 0;
@@ -232,19 +232,19 @@ void TestFunction2(arr1& grupe, arr2& vargsiukai) {
 
         std::ofstream testFile;
         if (std::is_same<typename std::decay<decltype(grupe)>::type, std::vector<Student>>::value) {
-            testFile.open("spartos_tyrimas\\class\\tyrimasVector2.txt", std::ios::app);
+            testFile.open("tyrimasVector2Class.txt", std::ios::app);
             containerNum = 0;
         }
         else if (std::is_same<typename std::decay<decltype(grupe)>::type, std::deque<Student>>::value) {
-            testFile.open("spartos_tyrimas\\class\\tyrimasDeque2.txt", std::ios::app);
+            testFile.open("tyrimasDeque2Class.txt", std::ios::app);
             containerNum = 1;
         }
         else if (std::is_same<typename std::decay<decltype(grupe)>::type, std::list<Student>>::value) {
-            testFile.open("spartos_tyrimas\\class\\tyrimasList2.txt", std::ios::app);
+            testFile.open("tyrimasList2Class.txt", std::ios::app);
             containerNum = 2;
         }
         else
-            testFile.open("spartos_tyrimas\\class\\tyrimasUnknown2.txt", std::ios::app); // Default fallback
+            testFile.open("tyrimasUnknown2Class.txt", std::ios::app); // Default fallback
 
 
         testFile << "Programos veikimas: \n";
