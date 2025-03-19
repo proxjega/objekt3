@@ -4,7 +4,6 @@
 
 int main()
 {
-
     _setmode(_fileno(stdout), _O_U8TEXT);
     _setmode(_fileno(stderr), _O_U8TEXT);
     srand(time(NULL));
@@ -15,9 +14,7 @@ int main()
     char menu;
     bool check = true;
     bool sortType = 1;
-
  
-
 	wstring inputFileName;
     wstring outputFileName;
 	wifstream inputFile;

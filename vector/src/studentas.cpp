@@ -15,7 +15,7 @@ Student::Student(wstring name, wstring surname, int pazymiuSk) {
 	std::uniform_int_distribution<int> dist(1, 10);
 	for (int i = 0; i < pazymiuSk; i++) {
 		marks_.push_back(dist(mt));
-		std::cout << "Generuotas pazymys: " << marks_[i] << std::endl;
+		std::wcout << L"Generuotas pazymys: " << marks_[i] << std::endl;
 	}
 	examMark_ = dist(mt);
 	name_ = name;
@@ -30,7 +30,7 @@ Student::Student(int pazymiuSk) {
     std::uniform_int_distribution<int> dist(1, 10);
 	for (int i = 0; i < pazymiuSk; i++) {
 		marks_.push_back(dist(mt));
-		std::cout << "Generuotas pazymys: " << marks_[i] << std::endl;
+		std::wcout << L"Generuotas pazymys: " << marks_[i] << std::endl;
 	}
 	examMark_ = dist(mt);
 	name_ = L"name" + std::to_wstring(dist(mt));
