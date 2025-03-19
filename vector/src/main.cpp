@@ -11,8 +11,8 @@ int main()
     srand(time(NULL));
 
     vector<Student> grupe, vargsiukai, kietiakai;
-    wstring names[5] = { L"name1", L"name2", L"name3", L"name4", L"name5" };
-    wstring surnames[5] = { L"surname1", L"surname2", L"surname3", L"surname4", L"surname5" };
+    wstring names[10] = { L"name1", L"name2", L"name3", L"name4", L"name5", L"name6", L"name7", L"name8", L"name9", L"name10",};
+    wstring surnames[10] = { L"surname1", L"surname2", L"surname3", L"surname4", L"surname5", L"surname6", L"surname7",  L"surname8", L"surname9", L"surname10"};
     float galutinisVid = 0;
     float mediana = 0;
     char menu;

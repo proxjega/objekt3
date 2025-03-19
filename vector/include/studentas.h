@@ -3,6 +3,7 @@
 #include <vector>
 #include <numeric>
 #include <algorithm>
+#include <random>
 
 using std::vector;
 using std::wstring;
@@ -14,6 +15,7 @@ private:
     std::vector<int>marks_;
     int examMark_ = 0;
 public:
+	Student() : name_(L""), surname_(L""), marks_(1), examMark_(1) {}
     Student(int pazymiuSk);
     Student(wstring name, wstring surname, int pazymiuSk); 
     Student(wstring name, wstring surname, vector<int> marks, int examMark);
