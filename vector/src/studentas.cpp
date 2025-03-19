@@ -63,19 +63,3 @@ float Student::calculateFinalMedian() const {
     median = median * 0.4 + examMark_ * 0.6;
     return median;
 }
-
-bool CompareByName(const Student& a, const Student& b) {
-    return a.getName() < b.getName();
-}
-
-bool CompareBySurname(const Student& a, const Student& b) {
-    return a.getSurname() < b.getSurname();
-}
-
-bool CompareByVid(const Student& a, const Student& b) {
-    return a.calculateFinalMean() < b.calculateFinalMean();
-}
-
-bool CompareByMed(const Student& a, const Student& b) {
-    return a.calculateFinalMedian() < b.calculateFinalMedian();
-}

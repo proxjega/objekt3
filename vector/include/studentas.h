@@ -40,8 +40,3 @@ public:
     float calculateFinalMedian() const;
     //std::istream& readStudent(std::istream&);
 };
-
-bool CompareByName(const Student &a, const Student &b);
-bool CompareBySurname(const Student &a, const Student &b);
-bool CompareByVid(const Student &a, const Student &b);
-bool CompareByMed(const Student &a, const Student &b);
