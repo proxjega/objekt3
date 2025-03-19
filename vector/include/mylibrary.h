@@ -39,16 +39,6 @@ using std::wofstream;
 using std::wcerr;
 using std::cerr;
 
-
-struct Student {
-    std::wstring name;
-    std::wstring surname;
-    std::vector<int>marks;
-    int examMark = 0;
-    float median = 0;
-    float vid = 0;
-};
-
 int InputMark();
 int InputMarkNum();
 int InputExamMark();

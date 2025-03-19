@@ -28,15 +28,6 @@ using std::left;
 using std::setprecision;
 using std::fixed;
 
-struct Student {
-    std::wstring name;
-    std::wstring surname;
-    std::vector<int>marks;
-    int examMark = 0;
-    float median = 0;
-    float vid = 0;
-};
-
 template <class T>
 void Readfile(std::wifstream& inputFile, T& grupe);
 bool CompareByVid(Student a, Student b);

@@ -1,6 +1,5 @@
 ﻿#pragma once
 
-
 template <class T>
 void Readfile(std::wifstream& inputFile, T& grupe) { //skaitymas is failo
     wstring temp;
