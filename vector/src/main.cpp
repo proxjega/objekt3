@@ -1,6 +1,5 @@
 ﻿#include "../include/mylibrary.h"
 #include "../include/templates.h"
-#include "../include/studentas.h"
 
 
 int main()
@@ -47,45 +46,10 @@ int main()
 			Case3(grupe);
             break;
         case('4'):
-            system("cls");
-            wcout << L"Iš kokio failo nuskaityti duomenis?\n\n";
-			system("dir /b *.txt");
-            wcin >> inputFileName;
-            try {
-                inputFile.open(inputFileName);
-				if (!inputFile) {
-					throw L"\007Failas nerastas";
-				}
-                Readfile(inputFile, grupe);
-				wcout << L"\nDuomenys nuskaityti.\n";
-            }
-			catch (const wchar_t* e) {
-				wcerr << e << endl;
-				break;
-			}
-			catch (...) {
-				wcerr << L"\007Nežinoma klaida" << endl;
-                break;
-			}
+			Case4(grupe);
             break;
         case('5'):
-            wcout << L"Kokią strategiją naudoti? 1,2 ar 3?\n";
-            while (true) {
-                try {
-                    strategy = InputStrategy();
-                    break;
-                }
-                catch (const wchar_t* e) {
-                    wcerr << e << endl;
-                    continue;
-                }
-                catch (...) {
-                    wcerr << L"\007Nežinoma klaida" << endl;
-                    continue;
-                }
-            }
-            if (strategy == 1) TestFunction(grupe, vargsiukai, kietiakai);
-            if (strategy == 2) TestFunction2(grupe, vargsiukai);
+			Case5(grupe, vargsiukai, kietiakai);
             break;
         case('6'):
             system("cls");

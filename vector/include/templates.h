@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "studentas.h"
 
 template <class T>
 void Readfile(std::wifstream& inputFile, T& grupe) { //skaitymas is failo

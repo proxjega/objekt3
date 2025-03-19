@@ -12,6 +12,7 @@
 #include <locale>
 #include <codecvt>
 #include "studentas.h"
+#include "templates.h"
 
 using std::wcin;
 using std::wcout;
@@ -32,10 +33,9 @@ using std::left;
 using std::setprecision;
 using std::fixed;
 
-template <class T>
-void Readfile(std::wifstream& inputFile, T& grupe);
 bool CompareByVid(const Student &a, const Student &b);
 int InputTestNum();
 int InputMark();
 int InputMarkNum();
 int InputExamMark();
+int InputStrategy();
