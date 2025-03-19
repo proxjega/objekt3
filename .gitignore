@@ -382,5 +382,3 @@ FodyWeavers.xsd
 /install_manifest.txt
 /CMakeLists.txt
 /runme.bat
-src/
-include/

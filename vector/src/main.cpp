@@ -1,5 +1,7 @@
 ﻿#include "../include/mylibrary.h"
 #include "../include/templates.h"
+#include "../include/studentas.h"
+
 
 int main()
 {
