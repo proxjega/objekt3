@@ -11,11 +11,15 @@ private:
     float median_ = 0;
     float vid_ = 0;
 public:
-    Student() : egzaminas_(0) {}  // default konstruktorius
+    Student() : examMark_(0) {}  // default konstruktorius
     Student(std::istream& is);
-    inline std::wstring vardas() const { return name_; }    // get'eriai, inline
-    inline std::wstring pavarde() const { return surname_; }  // get'eriai, inline
-    double galBalas(double (*) (vector<double>) = mediana) const;  // get'eriai
-    std::istream& readStudent(std::istream&);  // set'eriai
+    inline std::wstring vardas() const { return name_; }  
+    inline std::wstring pavarde() const { return surname_; }  
+    double galBalas(double (*) (vector<double>) = mediana) const;  
+    std::istream& readStudent(std::istream&);
 };
-};
+
+bool CompareByName(const Student a, const Student b);
+bool CompareBySurname(const Student a, const Student b);
+bool CompareByVid(const Student a, const Student b);
+bool CompareByMed(const Student a, const Student b);
