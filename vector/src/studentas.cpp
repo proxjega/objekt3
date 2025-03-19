@@ -5,8 +5,6 @@ Student::Student(wstring name, wstring surname, vector<int> marks, int examMark)
 	surname_ = surname;
 	marks_ = marks;
 	examMark_ = examMark;
-	finalMean_ = calculateFinalMean();
-	finalMedian_ = calculateFinalMedian();
 }
 
 Student::Student(wstring name, wstring surname, int pazymiuSk) {
@@ -20,8 +18,6 @@ Student::Student(wstring name, wstring surname, int pazymiuSk) {
 	examMark_ = dist(mt);
 	name_ = name;
 	surname_ = surname;
-	finalMean_ = calculateFinalMean();
-	finalMedian_ = calculateFinalMedian();
 }
 
 Student::Student(int pazymiuSk) {
@@ -37,8 +33,6 @@ Student::Student(int pazymiuSk) {
 	wcout << L"Generuotas vardas: " << name_ << endl;
 	surname_ = L"surname" + std::to_wstring(dist(mt));
 	wcout << L"Generuota pavarde: " << surname_ << endl;
-	finalMean_ = calculateFinalMean();
-	finalMedian_ = calculateFinalMedian();
 }
 
 Student::~Student() {
@@ -46,8 +40,6 @@ Student::~Student() {
 	surname_ = L"";
 	marks_.clear();
 	examMark_ = 0;
-	finalMean_ = 0;
-	finalMedian_ = 0;
 }
 
 float Student::calculateFinalMean() const {

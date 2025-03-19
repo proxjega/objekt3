@@ -17,10 +17,8 @@ private:
     std::wstring surname_;
     std::vector<int>marks_;
     int examMark_;
-	float finalMean_;
-	float finalMedian_;
 public:
-    Student() : name_(L""), surname_(L""), marks_(1), examMark_(1), finalMean_(1), finalMedian_(1){}
+    Student() : name_(L""), surname_(L""), marks_(1), examMark_(1){}
     Student(int pazymiuSk);
     Student(wstring name, wstring surname, int pazymiuSk);
     Student(wstring name, wstring surname, vector<int> marks, int examMark);
