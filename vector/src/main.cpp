@@ -88,20 +88,36 @@ int main()
         switch (menu)
         {
         case('1'):
-            sort(kietiakai.begin(), kietiakai.end(), CompareByName);
-            sort(vargsiukai.begin(), vargsiukai.end(), CompareByName);
+            sort(kietiakai.begin(), kietiakai.end(), [](const Student& s1, const Student& s2) -> bool {
+				return s1.getName() < s2.getName();
+                });
+            sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
+                return s1.getName() < s2.getName();
+                });
             break;
         case('2'):
-            sort(kietiakai.begin(), kietiakai.end(), CompareBySurname);
-            sort(vargsiukai.begin(), vargsiukai.end(), CompareBySurname);
+            sort(kietiakai.begin(), kietiakai.end(), [](const Student & s1, const Student & s2) -> bool {
+                return s1.getSurname() < s2.getSurname();
+            });
+            sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
+                return s1.getSurname() < s2.getSurname();
+                });
             break;
         case('3'):
-            sort(kietiakai.begin(), kietiakai.end(), CompareByVid);
-            sort(vargsiukai.begin(), vargsiukai.end(), CompareByVid);
+            sort(kietiakai.begin(), kietiakai.end(), [](const Student& s1, const Student& s2) -> bool {
+                return s1.calculateFinalMean() < s2.calculateFinalMean();
+                });
+            sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
+                return s1.calculateFinalMean() < s2.calculateFinalMean();
+                });
             break;
         case('4'):
-            sort(kietiakai.begin(), kietiakai.end(), CompareByMed);
-            sort(vargsiukai.begin(), vargsiukai.end(), CompareByMed);
+            sort(kietiakai.begin(), kietiakai.end(), [](const Student& s1, const Student& s2) -> bool {
+                return s1.calculateFinalMedian() < s2.calculateFinalMedian();
+                });
+            sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
+                return s1.calculateFinalMedian() < s2.calculateFinalMedian();
+                });
             break;
         default:
             wcout << L"\007Įveskite tinkama skaičių nuo 1 iki 4\n";
