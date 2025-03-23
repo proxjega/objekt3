@@ -78,18 +78,18 @@ int main()
         switch (menu)
         {
         case('1'):
-            sort(kietiakai.begin(), kietiakai.end(), []( Student& s1,  Student& s2) -> bool {
+            sort(kietiakai.begin(), kietiakai.end(), [](const Student& s1, const Student& s2) -> bool {
 				return s1.getName() < s2.getName();
                 });
-            sort(vargsiukai.begin(), vargsiukai.end(), []( Student& s1,  Student& s2) -> bool {
+            sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
                 return s1.getName() < s2.getName();
                 });
             break;
         case('2'):
-            sort(kietiakai.begin(), kietiakai.end(), []( Student & s1, Student & s2) -> bool {
+            sort(kietiakai.begin(), kietiakai.end(), [](const Student & s1, const Student & s2) -> bool {
                 return s1.getSurname() < s2.getSurname();
             });
-            sort(vargsiukai.begin(), vargsiukai.end(), []( Student& s1, Student& s2) -> bool {
+            sort(vargsiukai.begin(), vargsiukai.end(), [](const Student& s1, const Student& s2) -> bool {
                 return s1.getSurname() < s2.getSurname();
                 });
             break;
