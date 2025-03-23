@@ -36,5 +36,4 @@ public:
 
     float calculateFinalMean() const;
     float calculateFinalMedian() const;
-    //std::istream& readStudent(std::istream&);
 };
