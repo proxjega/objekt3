@@ -1,4 +1,4 @@
-#include "../include/studentas.h"
+﻿#include "../include/studentas.h"
 
 Student::Student(wstring name, wstring surname, vector<int> marks, int examMark) {
 	name_ = name;
@@ -74,6 +74,13 @@ Student& Student::operator=(Student&& orig) { //move assignment operator
 	orig.surname_ = L"";
 	orig.marks_.clear();
 	orig.examMark_ = 0;
+}
+
+std::wostream& operator<<(std::wostream& out, const Student& st) {
+	out << L"|Pavardė: " << setw(17) << left  << st.surname_ << L"|Vardas: " << setw(17) << left
+		 << st.name_ << L"|Pažymių suma: " << setw(20) << left << setprecision(2) << fixed
+		 << std::accumulate(st.marks_.begin(), st.marks_.end(), 0) << L"|Egzamino pažymys: " << setw(15) << left << setprecision(2) << fixed  << st.examMark_ << L"\n";
+	return out;
 }
 
 Student::~Student() {

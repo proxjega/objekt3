@@ -5,11 +5,17 @@
 #include <algorithm>
 #include <random>
 #include <iostream>
+#include <iomanip>
+#include <algorithm>
 
 using std::vector;
 using std::wcout;
 using std::endl;
 using std::wstring;
+using std::left;
+using std::setprecision;
+using std::setw;
+using std::fixed;
 
 class Student {
 private:
@@ -27,6 +33,10 @@ public:
 	Student& operator=(const Student& orig); //copy assignment operator
     Student(Student&& orig);
     Student& operator=(Student&& orig);
+
+    friend std::wostream& operator<<(std::wostream& out, const Student& st);
+    friend std::wistream& operator>>(std::wistream& out, const Student& st);
+
 
     ~Student();
 

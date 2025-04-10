@@ -127,6 +127,7 @@ void Case4(vector<Student>& grupe) {
 void Case5(vector<Student>& grupe, vector<Student> &vargsiukai, vector<Student> &kietiakai) {
 	int strategy;
     wcout << L"Kokią strategiją naudoti? 1 ar 2?\n";
+    wcout << L"Arba norite ištestuoti Rule of Five? 3\n";
     while (true) {
         try {
             strategy = InputStrategy();
@@ -165,6 +166,8 @@ void FileGen(int n) {
 }
 
 void TestRuleOfFive() {
-    wcout << L"Testing rule of five";
+    wcout << L"Testing rule of five...\n";
+    Student a(L"vardas", L"pavarde", 3);
+    wcout << a;
 }
 
