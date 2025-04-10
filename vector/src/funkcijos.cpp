@@ -143,6 +143,7 @@ void Case5(vector<Student>& grupe, vector<Student> &vargsiukai, vector<Student> 
     }
     if (strategy == 1) TestFunction(grupe, vargsiukai, kietiakai);
     if (strategy == 2) TestFunction2(grupe, vargsiukai);
+    if (strategy == 3) TestRuleOfFive();
 }
 
 void FileGen(int n) {
@@ -161,5 +162,9 @@ void FileGen(int n) {
             << setw(10) << left << dist(mt) << dist(mt);
     }
     file.close();
+}
+
+void TestRuleOfFive() {
+    wcout << L"Testing rule of five";
 }
 

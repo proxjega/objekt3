@@ -36,6 +36,7 @@ Student::Student(int pazymiuSk) {
 	surname_ = L"surname" + std::to_wstring(dist(mt));
 	wcout << L"Generuota pavarde: " << surname_ << endl;
 }
+
 Student::Student(const Student& orig) { //copy constructor
 	name_ = orig.name_;
 	surname_ = orig.surname_;
@@ -52,10 +53,10 @@ Student& Student::operator=(const Student& orig) { //copy assignment operator
 	return *this;
 }
 
-Student::Student(Student&& orig) {
+Student::Student(Student&& orig) { //move constructor
 	name_ = orig.name_;
 	surname_ = orig.surname_;
-	marks_ = orig.marks_;
+	marks_ = std::move(orig.marks_);
 	examMark_ = orig.examMark_;
 	orig.name_ = L"";
 	orig.surname_ = L"";
@@ -67,7 +68,7 @@ Student& Student::operator=(Student&& orig) { //move assignment operator
 	if (&orig == this) return *this;
 	name_ = orig.name_;
 	surname_ = orig.surname_;
-	marks_ = orig.marks_;
+	marks_ = std::move(orig.marks_);
 	examMark_ = orig.examMark_;
 	orig.name_ = L"";
 	orig.surname_ = L"";
