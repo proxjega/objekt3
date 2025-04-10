@@ -167,7 +167,27 @@ void FileGen(int n) {
 
 void TestRuleOfFive() {
     wcout << L"Testing rule of five...\n";
-    Student a(L"vardas", L"pavarde", 3);
-    wcout << a;
+    Student first;
+    wcin >> first;
+    wcout << L"____________________________________\nCopying through constructor: \n";
+    wcout << L"Original:\n" << first;
+    Student firstCopy(first);
+    wcout << L"Copy constructor:\n" << firstCopy;
+    wcout << L"Original after copying\n" << first;
+	wcout << L"____________________________________\nCopying through operator:\n";
+    wcout << L"Original:\n" << first;
+    Student firstCopyOperator = first;
+    wcout << L"Copy operator:\n" << firstCopyOperator;
+    wcout << L"Original after copying\n" << first;
+	wcout << L"____________________________________\nMoving through constructor:\n";
+    wcout << L"Original:\n" << first;
+    Student firstMove(std::move(first));
+    wcout << L"Move constructor:\n" << firstMove;
+    wcout << L"Original after moving:\n" << first;
+	wcout << L"____________________________________\nMoving through operator:\n";
+    wcout << L"Original:\n" << firstCopy;
+    Student firstMoveOperator = std::move(firstCopy);
+    wcout << L"Move operator:\n" << firstMoveOperator;
+    wcout << L"Original after moving:\n" << firstCopy;
 }
 

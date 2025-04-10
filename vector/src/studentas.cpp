@@ -78,9 +78,52 @@ Student& Student::operator=(Student&& orig) { //move assignment operator
 
 std::wostream& operator<<(std::wostream& out, const Student& st) {
 	out << L"|Pavardė: " << setw(17) << left  << st.surname_ << L"|Vardas: " << setw(17) << left
-		 << st.name_ << L"|Pažymių suma: " << setw(20) << left << setprecision(2) << fixed
+		 << st.name_ << L"|Pažymių suma: " << setw(10) << left << setprecision(2) << fixed
 		 << std::accumulate(st.marks_.begin(), st.marks_.end(), 0) << L"|Egzamino pažymys: " << setw(15) << left << setprecision(2) << fixed  << st.examMark_ << L"\n";
 	return out;
+}
+
+std::wistream& operator>>(std::wistream& in, Student& st) {
+	wcout << L"Iveskite vardą, pavardę\n";
+	in >> st.name_ >> st.surname_;
+	wcout << L"Iveskite pažymius (0 - pabaigti)\n";
+	while (true) {
+		try {
+			int mark = InputMark();
+			if (mark == 0) {
+				if (st.marks_.size() != 0) {
+					break;
+				}
+				else throw L"\007Įveskite bent vieną pažymį";
+				continue;
+			}
+			st.marks_.push_back(mark);
+		}
+		catch (const wchar_t* e) {
+			wcerr << e << endl;
+			continue;
+		}
+		catch (...) {
+			wcerr << L"\007Nežinoma klaida" << endl;
+			continue;
+		}
+	}
+	wcout << L"Įveskite egzamino pažymį:\n";
+	while (true) {
+		try {
+			st.examMark_ = InputExamMark();
+			break;
+		}
+		catch (const wchar_t* e) {
+			wcerr << e << endl;
+			continue;
+		}
+		catch (...) {
+			wcerr << L"\007Nežinoma klaida" << endl;
+			continue;
+		}
+	}
+	return in;
 }
 
 Student::~Student() {

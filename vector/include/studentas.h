@@ -16,6 +16,7 @@ using std::left;
 using std::setprecision;
 using std::setw;
 using std::fixed;
+using std::wcerr;
 
 class Student {
 private:
@@ -35,7 +36,7 @@ public:
     Student& operator=(Student&& orig);
 
     friend std::wostream& operator<<(std::wostream& out, const Student& st);
-    friend std::wistream& operator>>(std::wistream& out, const Student& st);
+    friend std::wistream& operator>>(std::wistream& in, Student& st);
 
 
     ~Student();
@@ -53,3 +54,5 @@ public:
     float calculateFinalMean() const;
     float calculateFinalMedian() const;
 };
+int InputMark();
+int InputExamMark();
