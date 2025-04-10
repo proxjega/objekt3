@@ -16,6 +16,7 @@ Student::Student(wstring name, wstring surname, int pazymiuSk) {
 		std::wcout << L"Generuotas pazymys: " << marks_[i] << std::endl;
 	}
 	examMark_ = dist(mt);
+	std::wcout << L"Generuotas egzamino pazymys: " << examMark_ << std::endl;
 	name_ = name;
 	surname_ = surname;
 }
@@ -29,6 +30,7 @@ Student::Student(int pazymiuSk) {
 		std::wcout << L"Generuotas pazymys: " << marks_[i] << std::endl;
 	}
 	examMark_ = dist(mt);
+	std::wcout << L"Generuotas egzamino pazymys: " << examMark_ << std::endl;
 	name_ = L"name" + std::to_wstring(dist(mt));
 	wcout << L"Generuotas vardas: " << name_ << endl;
 	surname_ = L"surname" + std::to_wstring(dist(mt));
