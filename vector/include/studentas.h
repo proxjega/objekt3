@@ -22,6 +22,12 @@ public:
     Student(int pazymiuSk);
     Student(wstring name, wstring surname, int pazymiuSk);
     Student(wstring name, wstring surname, vector<int> marks, int examMark);
+    
+    Student(const Student& orig); //copy constructor
+	Student& operator=(const Student& orig); //copy assignment operator
+    Student(Student&& orig);
+    Student& operator=(Student&& orig);
+
     ~Student();
 
     inline std::wstring getName() const { return name_; }

@@ -36,6 +36,44 @@ Student::Student(int pazymiuSk) {
 	surname_ = L"surname" + std::to_wstring(dist(mt));
 	wcout << L"Generuota pavarde: " << surname_ << endl;
 }
+Student::Student(const Student& orig) { //copy constructor
+	name_ = orig.name_;
+	surname_ = orig.surname_;
+	marks_ = orig.marks_;
+	examMark_ = orig.examMark_;
+}
+Student& Student::operator=(const Student& orig) { //copy assignment operator
+	if (this != &orig) {
+		name_ = orig.name_;
+		surname_ = orig.surname_;
+		marks_ = orig.marks_;
+		examMark_ = orig.examMark_;
+	}
+	return *this;
+}
+
+Student::Student(Student&& orig) {
+	name_ = orig.name_;
+	surname_ = orig.surname_;
+	marks_ = orig.marks_;
+	examMark_ = orig.examMark_;
+	orig.name_ = L"";
+	orig.surname_ = L"";
+	orig.marks_.clear();
+	orig.examMark_ = 0;
+}
+
+Student& Student::operator=(Student&& orig) { //move assignment operator
+	if (&orig == this) return *this;
+	name_ = orig.name_;
+	surname_ = orig.surname_;
+	marks_ = orig.marks_;
+	examMark_ = orig.examMark_;
+	orig.name_ = L"";
+	orig.surname_ = L"";
+	orig.marks_.clear();
+	orig.examMark_ = 0;
+}
 
 Student::~Student() {
 	name_ = L"";
