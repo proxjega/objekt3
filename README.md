@@ -16,9 +16,12 @@
 - move assignment operator
 ### Taip pat buvo perdengti operatoriai: << ir >>
 #### Funkcijoje "testavimas" galima protestuoti, kaip viekie visi metodai.
-
 ![image](https://github.com/user-attachments/assets/0dd947aa-c483-4149-a0b0-b20581a0729b)
-
+#### Matomas visu metodų veikimas
+#### >> operatorius leidžia įvesti duomenis iš konsolės (stdin) su įvesties validacija
+Įvedimas iš failo realizuotas per atskira funkciją.
+#### << operatorius leidžia išvesti duomenis bet kur (konsolė, failas)
+Išveda studento pavardę, vardą, po to vidurkį ir medianą.
 
 # Spartos tyrimas:
 ### Buvo atliktas programos spartos tyrimas, naudojant skirtingų įrašų dydžio duomenų failus.  
