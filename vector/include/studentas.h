@@ -18,6 +18,12 @@ using std::setw;
 using std::fixed;
 using std::wcerr;
 
+class Human {
+protected:
+    std::wstring name_;
+    std::wstring surname_;
+};
+
 class Student {
 private:
     std::wstring name_;
