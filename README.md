@@ -1,11 +1,24 @@
 # Naudojimo instrukcija:
-1. Yra 3 programos versijos: su Vector, Deque ir List konteineriais. Jų kodai yra atitinkamai aplankuose
-2. Kad paleisti programą, jums reikia įeiti į norima aplanką ir ten paleisti runme.bat
+1. Yra aplankas vector su programa.
+2. Kad paleisti programą, jums reikia įeiti į tą aplanką ir ten paleisti runme.bat
 3. Programa turi atsidaryti terminale, taip pat ir sukurti projektą jūsų IDE
 
 # Reikalavimai:
 - Windows 10 x64bit ar naujesnė versija
 - Instaliuotas CMake
+
+# Rule of five
+### Buvo sukurti 5 metodai:
+- destructor
+- copy constructor
+- move constructor
+- copy assignment operator
+- move assignment operator
+### Taip pat buvo perdengti operatoriai: << ir >>
+#### Funkcijoje "testavimas" galima protestuoti, kaip viekie visi metodai.
+
+![image](https://github.com/user-attachments/assets/0dd947aa-c483-4149-a0b0-b20581a0729b)
+
 
 # Spartos tyrimas:
 ### Buvo atliktas programos spartos tyrimas, naudojant skirtingų įrašų dydžio duomenų failus.  
@@ -32,7 +45,12 @@
 ## Visa informacija ir kiekvieno testo laikai yra pasiekiama aplanke "spartos_tyrimas"
 
 # Versijos:
-
+## v1.2
+- Naujausia versija
+- Pridėti penki metodai iš "Rule of five"
+## v1.1
+- Vector versijoje struct pakeista i class
+- Atliktas spartos tyrimas tarp class ir struct
 ## v1.0-final
 - Naujausia versija
 - Pridėta 2 strategija, atliktas spartos tyrimas
