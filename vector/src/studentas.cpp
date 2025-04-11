@@ -76,11 +76,11 @@ Student& Student::operator=(Student&& orig) { //move assignment operator
 	orig.examMark_ = 0;
 }
 
-std::wostream& operator<<(std::wostream& out, const Student& st) {
-	out << L"|Pavardė: " << setw(17) << left  << st.surname_ << L"|Vardas: " << setw(17) << left
-		 << st.name_ << L"|Pažymių suma: " << setw(10) << left << setprecision(2) << fixed
-		 << std::accumulate(st.marks_.begin(), st.marks_.end(), 0) << L"|Egzamino pažymys: " << setw(15) << left << setprecision(2) << fixed  << st.examMark_ << L"\n";
-	return out;
+std::wostream& operator<<(std::wostream& output, const Student& st) {
+	output << setw(17) << left << st.getSurname() << setw(17) << left
+		<< st.getName() << setw(20) << left << setprecision(2) << fixed
+		<< st.calculateFinalMean() << setw(15) << left << setprecision(2) << fixed << st.calculateFinalMedian() << L"\n";
+	return output;
 }
 
 std::wistream& operator>>(std::wistream& in, Student& st) {
@@ -135,12 +135,14 @@ Student::~Student() {
 
 float Student::calculateFinalMean() const {
 	vector<int> marks = getMarks();
+	if (marks.size() == 0) return 0;
     return 0.4 * ((std::accumulate(marks.begin(), marks.end(), 0) * 1.0) / (marks.size() * 1.0)) + 0.6 * examMark_;
 }
 
 float Student::calculateFinalMedian() const {
 	vector<int> marks = getMarks();
-    float median = 0;
+	if (marks.size() == 0) return 0;
+	float median = 0;
     std::sort(marks.begin(), marks.end());
     (marks.size() % 2 != 0) ? median = marks[marks.size() / 2] : median = (marks[marks.size() / 2] + marks[marks.size() / 2 - 1]) / 2.0;
     median = median * 0.4 + examMark_ * 0.6;

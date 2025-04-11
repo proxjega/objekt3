@@ -189,10 +189,10 @@ void TestRuleOfFive() {
     Student firstMoveOperator = std::move(firstCopy);
     wcout << L"Move operator:\n" << firstMoveOperator;
     wcout << L"Original after moving:\n" << firstCopy;
-    wofstream output(L"testas.txt");
+    wofstream output(L"overloadedOperatorTest.txt");
     output.imbue(std::locale(output.getloc(), new std::codecvt_utf8<wchar_t>)); 
     output << firstMoveOperator;
 	output.close();
-	system("notepad.exe testas.txt");
+	system("notepad.exe overloadedOperatorTest.txt");
 }
 
