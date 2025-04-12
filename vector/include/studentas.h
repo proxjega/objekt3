@@ -26,8 +26,13 @@ public:
 	Human() : name_(L""), surname_(L"") {}
 	Human(wstring name, wstring surname) : name_(name), surname_(surname) {}
     virtual ~Human();
+
 	inline std::wstring getName() const { return name_; }
 	inline std::wstring getSurname() const { return surname_; }
+    
+    void setName(std::wstring name) { name_ = name; }
+    void setSurname(std::wstring surname) { surname_ = surname; }
+    
     virtual float calculateFinalMean() const = 0;
     virtual float calculateFinalMedian() const = 0;
 };
@@ -50,16 +55,11 @@ public:
     friend std::wostream& operator<<(std::wostream& out, const Student& st);
     friend std::wistream& operator>>(std::wistream& in, Student& st);
 
-
     ~Student();
 
-    inline std::wstring getName() const { return name_; }
-    inline std::wstring getSurname() const { return surname_; }
     inline std::vector<int> getMarks() const { return marks_; }
     inline int getExamMark() const { return examMark_; }
 
-    void setName(std::wstring name) { name_ = name; }
-    void setSurname(std::wstring surname) { surname_ = surname; }
     void setMarks(std::vector<int> marks) { marks_ = marks; }
     void setExamMark(int examMark) { examMark_ = examMark; }
 
