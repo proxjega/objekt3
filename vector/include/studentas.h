@@ -50,6 +50,7 @@ public:
     friend std::wostream& operator<<(std::wostream& out, const Student& st);
     friend std::wistream& operator>>(std::wistream& in, Student& st);
 
+
     ~Student();
 
     inline std::wstring getName() const { return name_; }

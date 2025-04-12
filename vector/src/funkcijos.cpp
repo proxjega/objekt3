@@ -166,6 +166,7 @@ void FileGen(int n) {
 }
 
 void TestRuleOfFive() {
+    //Human test; not allowed
     wcout << L"Testing rule of five...\n";
     Student first;
     wcin >> first;
@@ -191,7 +192,7 @@ void TestRuleOfFive() {
     wcout << L"Original after moving:\n" << firstCopy;
     wofstream output(L"overloadedOperatorTest.txt");
     output.imbue(std::locale(output.getloc(), new std::codecvt_utf8<wchar_t>)); 
-    output << firstMoveOperator;
+    output << firstCopyOperator;
 	output.close();
 	system("notepad.exe overloadedOperatorTest.txt");
 }
