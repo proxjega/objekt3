@@ -166,7 +166,7 @@ void FileGen(int n) {
 }
 
 void TestRuleOfFive() {
-    //Human test; not allowed
+    //Human test;// not allowed
     wcout << L"Testing rule of five...\n";
     Student first;
     wcin >> first;
