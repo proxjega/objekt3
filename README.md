@@ -7,6 +7,13 @@
 - Windows 10 x64bit ar naujesnė versija
 - Instaliuotas CMake
 
+# Abstrakti bazinė klasė
+### Buvo sukurta abstrakti bazinė klasė "Human"
+![image](https://github.com/user-attachments/assets/2ebd4a77-63d8-405f-9055-a4fdb577dfab)
+### Programa buvo protestuota naudojant testą iš 1.2 versijos:
+![image](https://github.com/user-attachments/assets/3fdd2b68-f646-4b4a-ae67-f6f9d2a87129)
+#### Viskas veikia.
+
 # Rule of five
 ### Buvo sukurti 5 metodai:
 - destructor
@@ -48,6 +55,9 @@ Išveda studento pavardę, vardą, po to vidurkį ir medianą.
 ## Visa informacija ir kiekvieno testo laikai yra pasiekiama aplanke "spartos_tyrimas"
 
 # Versijos:
+## v1.5
+- Naujausia versija
+- Yra abstrakti bazinė klasė "Human", o klasė "Student" yra išvestinė
 ## v1.2
 - Naujausia versija
 - Pridėti penki metodai iš "Rule of five"
