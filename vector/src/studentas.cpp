@@ -1,5 +1,11 @@
 ﻿#include "../include/studentas.h"
 
+Human::~Human() {
+	name_ = L"";
+	surname_ = L"";
+}
+
+
 Student::Student(wstring name, wstring surname, vector<int> marks, int examMark) {
 	name_ = name;
 	surname_ = surname;

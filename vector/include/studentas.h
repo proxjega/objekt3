@@ -22,16 +22,22 @@ class Human {
 protected:
     std::wstring name_;
     std::wstring surname_;
+public:
+	Human() : name_(L""), surname_(L"") {}
+	Human(wstring name, wstring surname) : name_(name), surname_(surname) {}
+    virtual ~Human();
+	inline std::wstring getName() const { return name_; }
+	inline std::wstring getSurname() const { return surname_; }
+    virtual float calculateFinalMean() const = 0;
+    virtual float calculateFinalMedian() const = 0;
 };
 
-class Student {
+class Student : public Human{
 private:
-    std::wstring name_;
-    std::wstring surname_;
     std::vector<int>marks_;
     int examMark_;
 public:
-    Student() : name_(L""), surname_(L""), marks_(1), examMark_(1){}
+    Student() : Human(), marks_(1), examMark_(1) {}
     Student(int pazymiuSk);
     Student(wstring name, wstring surname, int pazymiuSk);
     Student(wstring name, wstring surname, vector<int> marks, int examMark);
@@ -43,7 +49,6 @@ public:
 
     friend std::wostream& operator<<(std::wostream& out, const Student& st);
     friend std::wistream& operator>>(std::wistream& in, Student& st);
-
 
     ~Student();
 

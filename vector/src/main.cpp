@@ -7,7 +7,6 @@ int main()
     _setmode(_fileno(stdout), _O_U8TEXT);
     _setmode(_fileno(stderr), _O_U8TEXT);
     srand(time(NULL));
-
     vector<Student> grupe, vargsiukai, kietiakai;
     float galutinisVid = 0;
     float mediana = 0;
