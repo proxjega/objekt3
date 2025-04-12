@@ -192,6 +192,7 @@ void TestRuleOfFive() {
     wcout << L"Original after moving:\n" << firstCopy;
     wofstream output(L"overloadedOperatorTest.txt");
     output.imbue(std::locale(output.getloc(), new std::codecvt_utf8<wchar_t>)); 
+	output << "Testing operator << into file:\n";
     output << firstCopyOperator;
 	output.close();
 	system("notepad.exe overloadedOperatorTest.txt");

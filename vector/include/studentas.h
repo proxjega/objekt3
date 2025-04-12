@@ -32,12 +32,12 @@ public:
     virtual float calculateFinalMedian() const = 0;
 };
 
-class Student : public Human{
+class Student : public Human {
 private:
     std::vector<int>marks_;
     int examMark_;
 public:
-    Student() : Human(), marks_(1), examMark_(1) {}
+    Student() : Human(), marks_(), examMark_(1) {}
     Student(int pazymiuSk);
     Student(wstring name, wstring surname, int pazymiuSk);
     Student(wstring name, wstring surname, vector<int> marks, int examMark);
