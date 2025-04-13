@@ -47,7 +47,7 @@ public:
 			}
 		}
 	}
-	T& operator[] (int index) {
-		return data_[index];
+	T& operator[] (int index) const noexcept {
+		return this->data_[index];
 	}
 };
