@@ -110,4 +110,18 @@ public:
 		end_ = &data_[size_];
 		temp = nullptr;
 	}
+
+	void shrink_to_fit() {
+		if (capacity_ <= size_) return;
+		capacity_ = size_;
+		T* temp = new T[capacity_];
+		for (int i = 0; i < size_; i++) {
+			temp[i] = data_[i];
+		}
+		delete[] data_;
+		data_ = temp;
+		begin_ = &data_[0];
+		end_ = &data_[size_];
+		temp = nullptr;
+	}
 };

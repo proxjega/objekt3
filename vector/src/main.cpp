@@ -30,9 +30,13 @@ int main()
     v1.push_back(2);
     v1.push_back(2);
     v1.push_back(2);
+    v1.push_back(2);
+    v1.push_back(2);
+    wcout << "size: " << v1.size() << endl;
+    wcout << v1.capacity() << endl;
+    v1.shrink_to_fit();
+    wcout << v1.capacity() << endl;
 
-    wcout << *v1.begin() << endl;
-    wcout << *(v1.end()-1) << endl;
 
 
 
