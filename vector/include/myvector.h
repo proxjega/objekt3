@@ -43,7 +43,11 @@ public:
 				}
 				delete[] data_;
 				data_ = temp;
+				temp = nullptr;
 			}
 		}
+	}
+	T& operator[] (int index) {
+		return data_[index];
 	}
 };

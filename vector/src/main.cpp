@@ -23,6 +23,7 @@ int main()
     wcout << "xd\n";
     v1.push_back(3);
     wcout << "xd\n";
+    cout << v1[1];
 
     while (check == true) {
         wcout << "---------------------------------\nMENU\n";
