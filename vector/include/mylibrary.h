@@ -16,7 +16,7 @@
 #include <deque>
 #include <list>
 #include "studentas.h"
-#include "vector.h"
+#include "myvector.h"
 
 using std::deque;
 using std::list;

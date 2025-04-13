@@ -18,7 +18,11 @@ int main()
 	wifstream inputFile;
     std::ofstream test;
 
-    Vector<int> v1;
+    myVector<int> v1;
+    v1.push_back(2);
+    wcout << "xd\n";
+    v1.push_back(3);
+    wcout << "xd\n";
 
     while (check == true) {
         wcout << "---------------------------------\nMENU\n";
