@@ -13,11 +13,12 @@ int main()
     char menu;
     bool check = true;
     bool sortType = 1;
- 
 	wstring inputFileName;
     wstring outputFileName;
 	wifstream inputFile;
     std::ofstream test;
+
+    Vector<int> v1;
 
     while (check == true) {
         wcout << "---------------------------------\nMENU\n";
