@@ -18,6 +18,7 @@ public:
 		begin_ = nullptr;
 		end_ = nullptr;
 	}
+
 	~myVector() {
 		size_ = 0;
 		capacity_ = 0;
@@ -25,22 +26,36 @@ public:
 		begin_ = nullptr;
 		end_ = nullptr;
 	}
+
 	int size() const {
 		return size_;
 	}
+
 	int capacity() const {
 		return capacity_;
 	}
-	T* begin() const {
+
+	T* begin() {
 		return begin_;
 	}
-	T* end() const {
+
+	T* cbegin() const {
+		return begin_;
+	}
+
+	T* end() {
+		return begin_;
+	}
+
+	T* cend() const {
 		return end_;
 	}
+
 	T& operator[] (int index) const noexcept {
 		if (index < 0 || index >= size_) throw std::out_of_range("Out of range!");
 		return this->data_[index];
 	}
+
 	void push_back(T value) {
 		if (size_ == 0) {
 			data_[0] = value;
