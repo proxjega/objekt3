@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <stdexcept>
+#include <memory>
 
 template<typename T>
 class myVector {
@@ -52,11 +53,11 @@ public:
 	}
 
 	T& operator[] (int index) const noexcept {
-		if (index < 0 || index >= size_) throw std::out_of_range("Out of range!");
+		//if (index < 0 || index >= size_) throw std::out_of_range("Out of range!");
 		return this->data_[index];
 	}
 
-	void push_back(T value) {
+	void push_back(const T& value) {
 		if (size_ == 0) {
 			data_[0] = value;
 			begin_ = &data_[0];
@@ -140,9 +141,12 @@ public:
 		temp = nullptr;
 	}
 
-	void clear() {
-		if (size_ == 0) return;
-		size_ = 0;
-		end_ = begin_;
-	}
+    void clear() {
+       if (size_ == 0) return;
+	   for (T* it = data_; it != data_ + size_; it++) {
+		   it->~T();
+	   }
+       size_ = 0;
+       end_ = begin_;
+    }
 };

@@ -32,8 +32,10 @@ int main()
     v1.push_back(2);
     v1.push_back(2);
     v1.push_back(2);
+    wcout << v1.capacity() << endl;
     v1.clear();
-    v1.shrink_to_fit();
+    wcout << v1[2] << endl;
+    wcout << v1.size() << endl;
     wcout << v1.capacity() << endl;
     for (auto it = v1.begin(); it != v1.end(); it++) {
         wcout << *it << endl;
