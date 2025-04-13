@@ -81,7 +81,7 @@ void SortStudentsInGroups2(arr1& vargsiukai, arr2& group, bool sortType) { //sor
 }
 
 template <class T>
-void PrintIntoFile(T& group, wstring fileName) {
+void PrintIntoFile(const T& group, wstring fileName) {
     wstringstream output;
     output << setw(17) << left << L"Pavardė" << setw(17) << left << L"Vardas" << setw(20) << left << "Galutinis(vid.)" << setw(15) << left << "Galutinis(med.)\n";
     output << "-----------------------------------------------------------------------------------\n";
@@ -94,6 +94,7 @@ void PrintIntoFile(T& group, wstring fileName) {
     outputFile.imbue(std::locale(outputFile.getloc(), new std::codecvt_utf8<wchar_t>));
     outputFile << output.str();
     outputFile.close();
+	output.clear();
 }
 
 template <class arr1, class arr2, class arr3>
@@ -111,7 +112,7 @@ void TestFunction(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
             testNum = InputTestNum();
             break;
         }
-        catch (const wchar_t* e) {
+        catch (const wchar_t e[]) {
             std::wcerr << e << endl;
             continue;
         }
@@ -184,16 +185,19 @@ void TestFunction(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
         grupe.clear();
 		kietiakai.clear();
 		vargsiukai.clear();
+		testFile.close();
     }
 	readMean = readMean / 5.0;
 	sortMean = sortMean / 5.0;
 	printMean = printMean / 5.0;
 	allMean = allMean / 5.0;
-	
+
     /*output << setw(17) << left << L"Container" << setw(17) << left << L"Irasu sk." << setw(25) << left << "Skaitymo vidurkis(s)" << setw(25) << left << "Rusiavimo vidurkis(s)" << setw(25) << left << "Isvedimo vidurkis(s)" << setw(25) << left << "Visos programos vidurkis(s)\n";
     output << "-------------------------------------------------------------------------------------------------------\n";*/
 	output << setw(17) << left << containers[containerNum] << setw(17) << left << testNum << setw(25) << left << readMean << setw(25) << left << sortMean << setw(25) << left << printMean << setw(25) << left << allMean << L"\n";
 	researchResults << output.str();
+	researchResults.close();
+	output.clear();
     wcout << L"Testas baigtas. Patikrinkite spartos_tyrimas aplanka\n";
 }
 
@@ -212,7 +216,7 @@ void TestFunction2(arr1& grupe, arr2& vargsiukai) {
             testNum = InputTestNum();
             break;
         }
-        catch (const wchar_t* e) {
+        catch (const wchar_t e[]) {
             std::wcerr << e << endl;
             continue;
         }
@@ -281,6 +285,7 @@ void TestFunction2(arr1& grupe, arr2& vargsiukai) {
         allMean += std::chrono::duration<double>(endOutput - programStart).count();
         grupe.clear();
         vargsiukai.clear();
+		testFile.close();
     }
     readMean = readMean / 5.0;
     sortMean = sortMean / 5.0;
@@ -291,5 +296,7 @@ void TestFunction2(arr1& grupe, arr2& vargsiukai) {
     output << "-------------------------------------------------------------------------------------------------------\n";*/
     output << setw(17) << left << containers[containerNum] << setw(17) << left << testNum << setw(25) << left << readMean << setw(25) << left << sortMean << setw(25) << left << printMean << setw(25) << left << allMean << L"\n";
     researchResults << output.str();
+	researchResults.close();
+	output.clear();
     wcout << L"Testas baigtas. Patikrinkite spartos_tyrimas aplanka\n";
 }

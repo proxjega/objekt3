@@ -2,6 +2,7 @@
 #include "../include/templates.h"
 
 
+
 int main()
 {
     _setmode(_fileno(stdout), _O_U8TEXT);
@@ -24,9 +25,7 @@ int main()
     wcout << v1.empty() << endl;
     v1.pop_back();
     wcout << v1.empty() << endl;
-    system("pause");
 
-    exit(0);
 
     while (check == true) {
         wcout << "---------------------------------\nMENU\n";
@@ -66,7 +65,7 @@ int main()
             sortType = InputSortType();
             break;
         }
-        catch (const wchar_t* e) {
+        catch (const wchar_t e[]) {
             wcerr << e << endl;
             continue;
         }
@@ -129,5 +128,5 @@ int main()
     PrintIntoFile(kietiakai, outputFileName);
 	system("notepad.exe vargsiukuRezultatai.txt");
 	system("notepad.exe kietiakuRezultatai.txt");
-	return 0;
+    return 0;
 }

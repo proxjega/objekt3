@@ -22,7 +22,7 @@ void Case1(vector<Student> &grupe) {
             }
             marks.push_back(mark);
         }
-        catch (const wchar_t* e) {
+        catch (const wchar_t e[]) {
             wcerr << e << endl;
             continue;
         }
@@ -37,7 +37,7 @@ void Case1(vector<Student> &grupe) {
             examMark = InputExamMark();
             break;
         }
-        catch (const wchar_t* e) {
+        catch (const wchar_t e[]) {
             wcerr << e << endl;
             continue;
         }
@@ -64,7 +64,7 @@ void Case2(vector<Student>& grupe) {
             markNum = InputMarkNum();
             break;
         }
-        catch (const wchar_t* e) {
+        catch (const wchar_t e[]) {
             wcerr << e << endl;
             continue;
         }
@@ -86,7 +86,7 @@ void Case3(vector<Student> &grupe) {
             markNum = InputMarkNum();
             break;
         }
-        catch (const wchar_t* e) {
+        catch (const wchar_t e[]) {
             wcerr << e << endl;
             continue;
         }
@@ -133,7 +133,7 @@ void Case5(vector<Student>& grupe, vector<Student> &vargsiukai, vector<Student> 
             strategy = InputStrategy();
             break;
         }
-        catch (const wchar_t* e) {
+        catch (const wchar_t e[]) {
             wcerr << e << endl;
             continue;
         }

@@ -21,6 +21,8 @@ public:
 		size_ = 0;
 		capacity_ = 0;
 		delete[] data_;
+		begin_ = nullptr;
+		end_ = nullptr;
 	}
 	int size() const {
 		return size_;
