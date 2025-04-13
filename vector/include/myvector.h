@@ -49,6 +49,12 @@ public:
 			}
 		}
 	}
+
+	void pop_back() {
+		if (size_ == 0) return;
+		size_ = size_-1;
+		end_ = end_-1;
+	}
 	int size() const {
 		return size_;
 	}
