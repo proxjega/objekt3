@@ -13,7 +13,7 @@ public:
 	myVector() {
 		size_ = 0;
 		capacity_ = 10;
-		data_ = new T[size_];
+		data_ = new T[capacity_];
 		begin_ = nullptr;
 		end_ = nullptr;
 	}
