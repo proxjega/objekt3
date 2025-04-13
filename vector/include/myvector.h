@@ -69,4 +69,8 @@ public:
 		end_ = end_-1;
 	}
 	
+	bool empty() {
+		if (begin_ == end_) return true;
+		return false;
+	}
 };

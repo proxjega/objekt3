@@ -19,8 +19,11 @@ int main()
     std::ofstream test;
 
     myVector<int> v1;
+    wcout << v1.empty() << endl;
     v1.push_back(1);
+    wcout << v1.empty() << endl;
     v1.pop_back();
+    wcout << v1.empty() << endl;
     system("pause");
 
     exit(0);
