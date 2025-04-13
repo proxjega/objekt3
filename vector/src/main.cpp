@@ -43,6 +43,8 @@ int main()
 	wcout << "10: " << v1[10] << endl;
     v1.push_back(11);
     wcout << "11: " << v1[11] << endl;
+    wcout << v1.size() << " " << v1.capacity() << endl;
+
 
     while (check == true) {
         wcout << "---------------------------------\nMENU\n";

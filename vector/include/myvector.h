@@ -47,6 +47,12 @@ public:
 			}
 		}
 	}
+	int size() const noexcept {
+		return size_;
+	}
+	int capacity() const noexcept {
+		return capacity_;
+	}
 	T& operator[] (int index) const noexcept {
 		return this->data_[index];
 	}
