@@ -124,4 +124,10 @@ public:
 		end_ = &data_[size_];
 		temp = nullptr;
 	}
+
+	void clear() {
+		if (size_ == 0) return;
+		size_ = 0;
+		end_ = begin_;
+	}
 };

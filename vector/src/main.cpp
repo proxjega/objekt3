@@ -18,7 +18,7 @@ int main()
     wstring outputFileName;
     wifstream inputFile;
     std::ofstream test;
-    
+
     myVector<int> v1;
     v1.push_back(1);
     v1.push_back(2);
@@ -32,11 +32,12 @@ int main()
     v1.push_back(2);
     v1.push_back(2);
     v1.push_back(2);
-    wcout << "size: " << v1.size() << endl;
-    wcout << v1.capacity() << endl;
+    v1.clear();
     v1.shrink_to_fit();
     wcout << v1.capacity() << endl;
-
+    for (auto it = v1.begin(); it != v1.end(); it++) {
+        wcout << *it << endl;
+    }
 
 
 
