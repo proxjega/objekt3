@@ -19,12 +19,22 @@ int main()
     wifstream inputFile;
     std::ofstream test;
     
-    //vector<int> testv;
-    //testv.push_back(1);
-    //wcout << testv.at(2);
     myVector<int> v1;
     v1.push_back(1);
-    //v1.at(2);
+    v1.push_back(2);
+    v1.push_back(2);
+    v1.push_back(2);
+    v1.push_back(2);
+    v1.push_back(2);
+    v1.push_back(2);
+    v1.push_back(2);
+    v1.push_back(2);
+    v1.push_back(2);
+
+    wcout << *v1.begin() << endl;
+    wcout << *(v1.end()-1) << endl;
+
+
 
 
     while (check == true) {
