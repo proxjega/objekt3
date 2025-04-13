@@ -18,13 +18,13 @@ int main()
     wstring outputFileName;
     wifstream inputFile;
     std::ofstream test;
-
+    
+    //vector<int> testv;
+    //testv.push_back(1);
+    //wcout << testv.at(2);
     myVector<int> v1;
-    wcout << v1.empty() << endl;
     v1.push_back(1);
-    wcout << v1.empty() << endl;
-    v1.pop_back();
-    wcout << v1.empty() << endl;
+    //v1.at(2);
 
 
     while (check == true) {
