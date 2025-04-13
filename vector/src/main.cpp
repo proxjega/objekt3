@@ -13,9 +13,9 @@ int main()
     char menu;
     bool check = true;
     bool sortType = 1;
-	wstring inputFileName;
+    wstring inputFileName;
     wstring outputFileName;
-	wifstream inputFile;
+    wifstream inputFile;
     std::ofstream test;
 
     myVector<int> v1;
@@ -28,24 +28,28 @@ int main()
     v1.push_back(3);
     wcout << "3: " << v1[3] << endl;
     v1.push_back(4);
-	wcout << "4: " << v1[4] << endl;
+    wcout << "4: " << v1[4] << endl;
     v1.push_back(5);
-	wcout << "5: " << v1[5] << endl;
+    wcout << "5: " << v1[5] << endl;
     v1.push_back(6);
-	wcout << "6: " << v1[6] << endl;
+    wcout << "6: " << v1[6] << endl;
     v1.push_back(7);
-	wcout << "7: " << v1[7] << endl;
+    wcout << "7: " << v1[7] << endl;
     v1.push_back(8);
-	wcout << "8: " << v1[8] << endl;
+    wcout << "8: " << v1[8] << endl;
     v1.push_back(9);
-	wcout << "9: " << v1[9] << endl;
+    wcout << "9: " << v1[9] << endl;
     v1.push_back(10);
-	wcout << "10: " << v1[10] << endl;
+    wcout << "10: " << v1[10] << endl;
     v1.push_back(11);
     wcout << "11: " << v1[11] << endl;
     wcout << v1.size() << " " << v1.capacity() << endl;
-
-
+    wcout << v1.end() << endl;
+    system("pause");
+    for (auto it = v1.begin(); it != v1.end(); it++) {
+        wcout << *it << endl;
+    }
+    exit(0);
     while (check == true) {
         wcout << "---------------------------------\nMENU\n";
         wcout << L"1 - ranka įvesti duomenis\n2 - generuoti pažymius\n3 - generuoti ir pažymius ir studentų vardus, pavardės\n4 - įvesti duomenis iš failo\n5 - testavimas\n6 - baigti darbą\n---------------------------------\n";

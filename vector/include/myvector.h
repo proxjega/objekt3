@@ -43,15 +43,23 @@ public:
 				}
 				delete[] data_;
 				data_ = temp;
+				begin_ = &data_[0];
+				end_ = &data_[size_] + 1;
 				temp = nullptr;
 			}
 		}
 	}
-	int size() const noexcept {
+	int size() const {
 		return size_;
 	}
-	int capacity() const noexcept {
+	int capacity() const {
 		return capacity_;
+	}
+    T* begin() const {  
+       return begin_;  
+    }
+	T* end() const {
+		return end_;
 	}
 	T& operator[] (int index) const noexcept {
 		return this->data_[index];
