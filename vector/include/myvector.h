@@ -21,8 +21,21 @@ public:
 		size_ = 0;
 		capacity_ = 0;
 		delete[] data_;
-		delete begin_;
-		delete end_;
+	}
+	int size() const {
+		return size_;
+	}
+	int capacity() const {
+		return capacity_;
+	}
+	T* begin() const {
+		return begin_;
+	}
+	T* end() const {
+		return end_;
+	}
+	T& operator[] (int index) const noexcept {
+		return this->data_[index];
 	}
 	void push_back(T value) {
 		if (size_ == 0) {
@@ -55,19 +68,5 @@ public:
 		size_ = size_-1;
 		end_ = end_-1;
 	}
-	int size() const {
-		return size_;
-	}
-	int capacity() const {
-		return capacity_;
-	}
-    T* begin() const {  
-       return begin_;  
-    }
-	T* end() const {
-		return end_;
-	}
-	T& operator[] (int index) const noexcept {
-		return this->data_[index];
-	}
+	
 };
