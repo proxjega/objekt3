@@ -19,29 +19,22 @@ int main()
     wifstream inputFile;
     std::ofstream test;
 
-    myVector<int> v1;
-    v1.push_back(1);
-    v1.push_back(2);
-    v1.push_back(2);
-    v1.push_back(2);
-    v1.push_back(2);
-    v1.push_back(2);
-    v1.push_back(2);
-    v1.push_back(2);
-    v1.push_back(2);
-    v1.push_back(2);
-    v1.push_back(2);
-    v1.push_back(2);
-    wcout << v1.capacity() << endl;
-    v1.clear();
-    wcout << v1[2] << endl;
-    wcout << v1.size() << endl;
-    wcout << v1.capacity() << endl;
-    for (auto it = v1.begin(); it != v1.end(); it++) {
-        wcout << *it << endl;
+
+    myVector<int> v1(10,12);
+    
+    wcout << "size: " << v1.size() << endl;
+    wcout << "capacity: " << v1.capacity() << endl;
+    wcout << "end adress: " << v1.end() << endl;
+    wcout << "last elem address: " << &v1[v1.size()-1] << endl;
+    wcout << "iterating...\n";
+    int i = 0;
+    for (auto it = v1.begin(); it != v1.end(); ++it) {
+        wcout << i << "elem: " << *it << endl;
+        i++;
     }
 
-
+    wcout << "--------\nend\n";
+    exit(0);
 
 
     while (check == true) {

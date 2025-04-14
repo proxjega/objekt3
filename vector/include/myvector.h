@@ -20,9 +20,23 @@ public:
 		end_ = nullptr;
 	}
 
+	myVector(int num, T val) { // vector with num elements of value val
+		size_ = num;
+		capacity_ = num;
+		data_ = new T[capacity_];
+		for (int i = 0; i < num; i++) {
+			data_[i] = val;
+		}
+		begin_ = &data_[0];
+		end_ = &data_[size_];
+	}
+
 	~myVector() {
+		for (T* it = data_; it != data_ + size_; it++) {
+			it->~T();
+		}
 		size_ = 0;
-		capacity_ = 0;
+		capacity_ = 0; 
 		delete[] data_;
 		begin_ = nullptr;
 		end_ = nullptr;
@@ -45,7 +59,7 @@ public:
 	}
 
 	T* end() {
-		return begin_;
+		return end_;
 	}
 
 	T* cend() const {
@@ -65,10 +79,7 @@ public:
 			size_ = 1;
 		}
 		else {
-			data_[size_] = value;
-			end_ = &data_[size_] + 1;
-			size_++;
-			if (size_ == capacity_) {
+			if (size_ >= capacity_) {
 				capacity_ = capacity_ * 2;
 				T* temp = new T[capacity_];
 				for (int i = 0; i < size_; i++) {
@@ -80,6 +91,10 @@ public:
 				end_ = &data_[size_];
 				temp = nullptr;
 			}
+			data_[size_] = value;
+			end_ = &data_[size_] + 1;
+			size_++;
+			
 		}
 	}
 
