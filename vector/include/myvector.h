@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <memory>
+#include <string>
 
 template<typename T>
 class myVector {
@@ -66,11 +67,30 @@ public:
 		return end_;
 	}
 
+	T& front() const {
+		if (this->empty()) throw std::out_of_range("Vector is empty");
+		return *begin_;
+	}
+
+	T& back() const {
+		if (this->empty()) throw std::out_of_range("Vector is empty");
+		return *(end_ - 1);
+	}
+	
 	T& operator[] (int index) const noexcept {
 		//if (index < 0 || index >= size_) throw std::out_of_range("Out of range!");
 		return this->data_[index];
 	}
 
+	T& at(int index) const {
+		if (index < 0 || index >= size_) {
+			throw std::out_of_range("Out of range!");
+			std::wcerr << "Out of range!";
+			std::terminate();
+		}
+		return data_[index];
+	}
+	
 	void push_back(const T& value) {
 		if (size_ == 0) {
 			data_[0] = value;
@@ -100,6 +120,7 @@ public:
 
 	void pop_back() {
 		if (size_ == 0) return;
+		~data_[size_ - 1];
 		size_ = size_-1;
 		end_ = end_-1;
 	}
@@ -107,25 +128,6 @@ public:
 	bool empty() const {
 		if (begin_ == end_) return true;
 		return false;
-	}
-
-	T& front() const {
-		if (this->empty()) throw std::out_of_range("Vector is empty");
-		return *begin_;
-	}
-
-	T& back() const {
-		if (this->empty()) throw std::out_of_range("Vector is empty");
-		return *(end_ - 1);
-	}
-
-	T& at(int index) const {
-		if (index < 0 || index >= size_) {
-			throw std::out_of_range("Out of range!");
-			wcerr << "Out of range!";
-			std::terminate();
-		}
-		return data_[index];
 	}
 
 	void reserve(int num) {
@@ -164,4 +166,18 @@ public:
        size_ = 0;
        end_ = begin_;
     }
+
+	std::wstring output() const {
+		std::wstringstream out;
+		out << size_;
+		if (size_ != 0) {
+			out << *begin_ << *(end_ - 1);
+			for (int i = 0; i < size_; i++) {
+				out << data_[i];
+			}
+		}
+		std::wstring str;
+		str = out.str();
+		return str;
+	}	
 };

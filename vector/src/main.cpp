@@ -19,7 +19,8 @@ int main()
     wifstream inputFile;
     std::ofstream test;
 
-
+    myVector<int> v2;
+    wcout << "endv2: " << *(v2.end()-1) << endl;
     myVector<int> v1(10,12);
     
     wcout << "size: " << v1.size() << endl;
@@ -32,8 +33,8 @@ int main()
         wcout << i << "elem: " << *it << endl;
         i++;
     }
-
-    wcout << "--------\nend\n";
+    wcout << v1.output();
+    wcout << "\n--------\nend\n";
     exit(0);
 
 
