@@ -21,7 +21,7 @@ public:
 		end_ = nullptr;
 	}
 
-	myVector(int num, T val) { // vector with num elements of value val
+	myVector(int num, T val) { // fill constructor
 		size_ = num;
 		capacity_ = num;
 		data_ = new T[capacity_];
@@ -30,6 +30,30 @@ public:
 		}
 		begin_ = &data_[0];
 		end_ = &data_[size_];
+	}
+
+	myVector(const myVector& other) { // copy constructor
+		size_ = other.size_;
+		capacity_ = other.capacity_;
+		data_ = new T[capacity_];
+		for (int i = 0; i < size_; i++) {
+			data_[i] = other.data_[i];
+		}
+		begin_ = &data_[0];
+		end_ = &data_[size_];
+	}
+
+	myVector(myVector&& other) { //move constructor
+		size_ = other.size_;
+		capacity_ = other.capacity_;
+		data_ = other.data_;
+		begin_ = &data_[0];
+		end_ = &data_[size_]; 
+		other.data_ = nullptr;
+		other.size_ = 0;
+		other.capacity_ = 0;
+		other.begin_ = nullptr;
+		other.end_ = nullptr;
 	}
 
 	~myVector() {
@@ -92,6 +116,10 @@ public:
 	}
 	
 	void push_back(const T& value) {
+		if (capacity_ == 0) {
+			capacity_ = 10;
+			data_ = new T[capacity_];
+		}
 		if (size_ == 0) {
 			data_[0] = value;
 			begin_ = &data_[0];

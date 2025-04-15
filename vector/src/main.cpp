@@ -19,10 +19,13 @@ int main()
     wifstream inputFile;
     std::ofstream test;
 
-    myVector<int> v2;
-    wcout << "endv2: " << *(v2.end()-1) << endl;
-    myVector<int> v1(10,12);
     
+    myVector<int> v1(10,12);
+    myVector<int> v3(std::move(v1));
+    v1.push_back(5);
+    v1.push_back(5);
+    v1.push_back(5);
+
     wcout << "size: " << v1.size() << endl;
     wcout << "capacity: " << v1.capacity() << endl;
     wcout << "end adress: " << v1.end() << endl;

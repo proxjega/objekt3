@@ -147,5 +147,26 @@ namespace vectortest
 			Assert::AreEqual(v1.capacity(), 0);
 			Assert::AreEqual(static_cast<int>(v2.capacity()), v1.capacity());
 		}
+		TEST_METHOD(MoveConstructor)
+		{
+			Logger::WriteMessage("MoveConstructor");
+			myVector<int> v1(10, 10);
+			myVector<int> v2(std::move(v1));
+			myVector<int> v3(10, 10);
+			Assert::AreEqual(v2.size(), 10);
+			Assert::AreEqual(v2.capacity(), 10);
+			Assert::AreEqual(v2.output(), v3.output());
+			Assert::AreEqual(v1.size(), 0);
+			Assert::AreEqual(v1.capacity(), 0);
+		}
+		TEST_METHOD(CopyConstructor)
+		{
+			Logger::WriteMessage("CopyConstructor");
+			myVector<int> v1(10, 10);
+			myVector<int> v2(v1);
+			Assert::AreEqual(v2.size(), 10);
+			Assert::AreEqual(v2.capacity(), 10);
+			Assert::AreEqual(v1.output(), v2.output());
+		}
 	};
 }
