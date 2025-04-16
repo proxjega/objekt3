@@ -78,9 +78,20 @@ public:
 		end_ = &data_[size_];
 	}
 
+	myVector operator=(std::initializer_list<T> list) { // operator = with initalizer list
+		this->~myVector();
+		size_ = static_cast<int>(list.size());
+		capacity_ = size_;
+		data_ = new T[capacity_];
+		std::copy(list.begin(), list.end(), data_);
+		begin_ = &data_[0];
+		end_ = &data_[size_];
+		return *this;
+	}
+
 	myVector& operator= (const myVector& other) { // copy assignment
 		if (this == &other) return *this;
-		delete[] data_;
+		this->~myVector();
 		size_ = other.size_;
 		capacity_ = other.capacity_;
 		data_ = new T[capacity_];
@@ -89,11 +100,12 @@ public:
 		}
 		begin_ = &data_[0];
 		end_ = &data_[size_];
+		return *this;
 	}
 
 	myVector& operator= (myVector&& other) { // move assignment
 		if (this == &other) return *this;
-		delete [] data_;
+		this->~myVector();
 		size_ = other.size_;
 		capacity_ = other.capacity_;
 		data_ = other.data_;
@@ -104,6 +116,7 @@ public:
 		other.capacity_ = 0;
 		other.end_ = nullptr;
 		other.begin_ = nullptr;
+		return *this;
 	}
 
 	~myVector() {

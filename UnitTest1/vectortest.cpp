@@ -233,5 +233,23 @@ namespace vectortest
 			Assert::AreEqual(v1.at(0), v2.at(0));
 			Assert::AreEqual(v1.output(), v3.output());
 		}
+		TEST_METHOD(InitializerListAssignmentOperator)
+		{
+			Logger::WriteMessage("InitializerListAssignmentOperator");
+			myVector<int> v1;
+			v1 = { 1,2,3,4,5 };
+			std::vector<int> v2{ 1,2,3,4,5 };
+			myVector<int> v3;
+			for (int i = 1; i <= 5; i++) {
+				v3.push_back(i);
+			}
+			Assert::AreEqual(v1.size(), 5);
+			Assert::AreEqual(v1.at(1), v2.at(1));
+			Assert::AreEqual(v1.at(2), v2.at(2));
+			Assert::AreEqual(v1.at(3), v2.at(3));
+			Assert::AreEqual(v1.at(4), v2.at(4));
+			Assert::AreEqual(v1.at(0), v2.at(0));
+			Assert::AreEqual(v1.output(), v3.output());
+		}
 	};
 }
