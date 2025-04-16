@@ -191,5 +191,18 @@ namespace vectortest
 			Assert::AreEqual(v1.size(), 0);
 			Assert::AreEqual(v1.capacity(), 0);
 		}
+		TEST_METHOD(EqualOperators)
+		{
+			Logger::WriteMessage("EqualOperators");
+			myVector<int> v1(10, 10);
+			myVector<int> v2(10, 10);
+			myVector<int> v3(v2);
+			myVector<int> v4(11, 11);
+			Assert::AreEqual(v1 == v2, true);
+			Assert::AreEqual(v1 == v3, true);
+			Assert::AreEqual(v1 != v4, true);
+			Assert::AreEqual(v1 != v2, false);
+			Assert::AreEqual(v1 == v4, false);
+		}
 	};
 }

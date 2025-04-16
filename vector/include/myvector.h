@@ -13,7 +13,7 @@ private:
 	T* begin_;
 	T* end_;
 public:
-	myVector() {
+	myVector() { // basic constructor
 		size_ = 0;
 		capacity_ = 10;
 		data_ = new T[capacity_];
@@ -238,4 +238,20 @@ public:
 		str = out.str();
 		return str;
 	}	
+
+	bool operator==(const myVector& second) {
+		if (size_ != second.size_) return false;
+		for (int i = 0; i < size_; i++) {
+			if (data_[i] != second.data_[i]) return false;
+		}
+		return true;
+	}
+
+	bool operator!=(const myVector& second) {
+		if (size_ != second.size_) return true;
+		for (int i = 0; i < size_; i++) {
+			if (data_[i] != second.data_[i]) return true;
+		}
+		return false;
+	}
 };
