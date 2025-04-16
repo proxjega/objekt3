@@ -204,5 +204,17 @@ namespace vectortest
 			Assert::AreEqual(v1 != v2, false);
 			Assert::AreEqual(v1 == v4, false);
 		}
+		TEST_METHOD(RangeConstructor)
+		{
+			Logger::WriteMessage("RangeConstructor");
+			myVector<int> v1(10, 10);
+			myVector<int> v2(v1.begin(), v1.end());
+			int arr[10] = { 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 };
+			myVector<int> v3(arr, arr + 10);
+			Assert::AreEqual(v1.size(), 10);
+			Assert::AreEqual(v1.output(), v2.output());
+			Assert::AreEqual(v1.output(), v3.output());
+			Assert::AreEqual(v2.output(), v3.output());
+		}
 	};
 }

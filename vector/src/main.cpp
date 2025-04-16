@@ -21,7 +21,7 @@ int main()
 
     
     myVector<int> v1(10,12);
-    myVector<int> v3(std::move(v1));
+    myVector<int> v3(v1.begin(), v1.end());
     v1.push_back(5);
     v1.push_back(5);
     v1.push_back(5);
@@ -30,6 +30,7 @@ int main()
     wcout << "capacity: " << v1.capacity() << endl;
     wcout << "end adress: " << v1.end() << endl;
     wcout << "last elem address: " << &v1[v1.size()-1] << endl;
+    wcout << "elem num " << v1.end() - v1.begin() << endl;
     wcout << "iterating...\n";
     int i = 0;
     for (auto it = v1.begin(); it != v1.end(); ++it) {

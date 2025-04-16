@@ -32,6 +32,17 @@ public:
 		end_ = &data_[size_];
 	}
 
+	myVector(T* begin, T* end) { //range constructor
+		size_ = end - begin;
+		capacity_ = size_;
+		data_ = new T[capacity_];
+		for (int i = 0; i < size_; i++) {
+			data_[i] = *(begin + i);
+		}
+		begin_ = &data_[0];
+		end_ = &data_[size_];
+	}
+
 	myVector(const myVector& other) { // copy constructor
 		size_ = other.size_;
 		capacity_ = other.capacity_;
@@ -239,7 +250,7 @@ public:
 		return str;
 	}	
 
-	bool operator==(const myVector& second) {
+	bool operator==(const myVector& second) const {
 		if (size_ != second.size_) return false;
 		for (int i = 0; i < size_; i++) {
 			if (data_[i] != second.data_[i]) return false;
@@ -247,7 +258,7 @@ public:
 		return true;
 	}
 
-	bool operator!=(const myVector& second) {
+	bool operator!=(const myVector& second) const {
 		if (size_ != second.size_) return true;
 		for (int i = 0; i < size_; i++) {
 			if (data_[i] != second.data_[i]) return true;
