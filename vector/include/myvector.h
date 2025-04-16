@@ -3,6 +3,8 @@
 #include <stdexcept>
 #include <memory>
 #include <string>
+#include <algorithm>
+#include <initializer_list>
 
 template<typename T>
 class myVector {
@@ -65,6 +67,15 @@ public:
 		other.capacity_ = 0;
 		other.begin_ = nullptr;
 		other.end_ = nullptr;
+	}
+
+	myVector(std::initializer_list<T> list) { //initalizer list constructor
+		size_ = static_cast<int>(list.size());
+		capacity_ = size_;
+		data_ = new T[capacity_];
+		std::copy(list.begin(), list.end(), data_);
+		begin_ = &data_[0];
+		end_ = &data_[size_];
 	}
 
 	myVector& operator= (const myVector& other) { // copy assignment
