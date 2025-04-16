@@ -57,18 +57,16 @@ public:
 	}
 
 	myVector& operator= (const myVector& other) { // copy assignment
-		if (this != &other) {
-			delete[] data_;
-			size_ = other.size_;
-			capacity_ = other.capacity_;
-			data_ = new T[capacity_];
-			for (int i = 0; i < size_; i++) {
-				data_[i] = other.data_[i];
-			}
-			begin_ = &data_[0];
-			end_ = &data_[size_];
+		if (this == &other) return *this;
+		delete[] data_;
+		size_ = other.size_;
+		capacity_ = other.capacity_;
+		data_ = new T[capacity_];
+		for (int i = 0; i < size_; i++) {
+			data_[i] = other.data_[i];
 		}
-		return *this;
+		begin_ = &data_[0];
+		end_ = &data_[size_];
 	}
 
 	myVector& operator= (myVector&& other) { // move assignment
@@ -221,6 +219,8 @@ public:
 	   for (T* it = data_; it != data_ + size_; it++) {
 		   it->~T();
 	   }
+	   delete[] data_;
+	   data_ = new T[capacity_];
        size_ = 0;
        end_ = begin_;
     }

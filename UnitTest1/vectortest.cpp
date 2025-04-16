@@ -168,5 +168,28 @@ namespace vectortest
 			Assert::AreEqual(v2.capacity(), 10);
 			Assert::AreEqual(v1.output(), v2.output());
 		}
+		TEST_METHOD(CopyAssignmentOperator)
+		{
+			Logger::WriteMessage("CopyAssignmentOperator");
+			myVector<int> v1(10, 10);
+			myVector<int> v2;
+			v2 = v1;
+			Assert::AreEqual(v2.size(), 10);
+			Assert::AreEqual(v2.capacity(), 10);
+			Assert::AreEqual(v1.output(), v2.output());
+		}
+		TEST_METHOD(MoveAssignmentOperator)
+		{
+			Logger::WriteMessage("MoveAssignmentOperator");
+			myVector<int> v1(10, 10);
+			std::wstring temp = v1.output();
+			myVector<int> v2;
+			v2 = std::move(v1);
+			Assert::AreEqual(v2.size(), 10);
+			Assert::AreEqual(v2.capacity(), 10);
+			Assert::AreEqual(v2.output(), temp);
+			Assert::AreEqual(v1.size(), 0);
+			Assert::AreEqual(v1.capacity(), 0);
+		}
 	};
 }
