@@ -56,6 +56,36 @@ public:
 		other.end_ = nullptr;
 	}
 
+	myVector& operator= (const myVector& other) { // copy assignment
+		if (this != &other) {
+			delete[] data_;
+			size_ = other.size_;
+			capacity_ = other.capacity_;
+			data_ = new T[capacity_];
+			for (int i = 0; i < size_; i++) {
+				data_[i] = other.data_[i];
+			}
+			begin_ = &data_[0];
+			end_ = &data_[size_];
+		}
+		return *this;
+	}
+
+	myVector& operator= (myVector&& other) { // move assignment
+		if (this == &other) return *this;
+		delete [] data_;
+		size_ = other.size_;
+		capacity_ = other.capacity_;
+		data_ = other.data_;
+		begin_ = &data_[0];
+		end_ = &data_[size_];
+		other.data_ = nullptr;
+		other.size_ = 0;
+		other.capacity_ = 0;
+		other.end_ = nullptr;
+		other.begin_ = nullptr;
+	}
+
 	~myVector() {
 		for (T* it = data_; it != data_ + size_; it++) {
 			it->~T();
