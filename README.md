@@ -7,14 +7,26 @@
 - Windows 10 x64bit ar naujesnė versija
 - Instaliuotas CMake
 
-# Abstrakti bazinė klasė
+# Dokumentacija
+### Klasės "Studentas" Dokumentacija yra pasiekiama aplanke "Documentation"
+- Yra HTML, LaTex ir .PDF formatai
+- Sukurta naudojant DoxyGen
+
+# Unit tests
+### Klasė "Studentas" buvo protestuota naudojant CPP unit tests. 
+#### Testo pavyzdys:   
+![image](https://github.com/user-attachments/assets/b6429876-95ae-4f05-8bca-96fbb6bc1cf3)
+#### Visus testus klase praejo:   
+![image](https://github.com/user-attachments/assets/caadca10-bc31-45cd-8a53-6a3d3fe3aeda)
+
+# v1.5:  Abstrakti bazinė klasė
 ### Buvo sukurta abstrakti bazinė klasė "Human"
 ![image](https://github.com/user-attachments/assets/2ebd4a77-63d8-405f-9055-a4fdb577dfab)
 ### Programa buvo protestuota naudojant testą iš 1.2 versijos:
 ![image](https://github.com/user-attachments/assets/3fdd2b68-f646-4b4a-ae67-f6f9d2a87129)
 #### Viskas veikia.
 
-# Rule of five
+# v1.2: Rule of five
 ### Buvo sukurti 5 metodai:
 - destructor
 - copy constructor
@@ -55,8 +67,11 @@ Išveda studento pavardę, vardą, po to vidurkį ir medianą.
 ## Visa informacija ir kiekvieno testo laikai yra pasiekiama aplanke "spartos_tyrimas"
 
 # Versijos:
-## v1.5
+## v2.0
 - Naujausia versija
+- Atliktas klases testavimas naudojant CPP Unit tests
+- Sukurta klases dokumentacija
+## v1.5
 - Yra abstrakti bazinė klasė "Human", o klasė "Student" yra išvestinė
 ## v1.2
 - Naujausia versija
