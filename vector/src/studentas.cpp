@@ -7,10 +7,10 @@ Human::~Human() {
 
 /**
  * Constructor with 4 parameters \n
- * name - name of the student \n
- * surname - surname of the student \n
- * marks - vector of marks \n
- * examMark - exam mark
+ * @param name - name of the student \n
+ * @param surname - surname of the student \n
+ * @param marks - vector of marks \n
+ * @param examMark - exam mark
  */
 Student::Student(wstring name, wstring surname, vector<int> marks, int examMark) {
 	name_ = name;
@@ -20,9 +20,9 @@ Student::Student(wstring name, wstring surname, vector<int> marks, int examMark)
 }
 /**
  * Constructor with 3 parameters \n
- * name - name of the student \n
- * surname - surname of the student \n
- * pazymiuSk - number of marks to generate randomly
+ * @param name - name of the student \n
+ * @param surname - surname of the student \n
+ * @param pazymiuSk - number of marks to generate randomly
  */
 Student::Student(wstring name, wstring surname, int pazymiuSk) {
 	std::random_device rd;
@@ -39,7 +39,7 @@ Student::Student(wstring name, wstring surname, int pazymiuSk) {
 }
 /**
  * Constructor with 1 parameter \n
- * pazymiuSk - number of marks to generate randomly \n
+ * @param pazymiuSk - number of marks to generate randomly \n
  * Both name and surname are generated randomly
  */
 Student::Student(int pazymiuSk) {
@@ -59,7 +59,7 @@ Student::Student(int pazymiuSk) {
 }
 /**
  * Copy constructor \n
- * orig - object to copy from
+ * @param orig - object to copy from
  */
 Student::Student(const Student& orig) { //copy constructor
 	name_ = orig.name_;
@@ -69,7 +69,7 @@ Student::Student(const Student& orig) { //copy constructor
 }
 /**
  * Copy assignment operator \n
- * orig - object to copy from
+ * @param orig - object to copy from
  */
 Student& Student::operator=(const Student& orig) { //copy assignment operator
 	if (this != &orig) {
@@ -82,7 +82,7 @@ Student& Student::operator=(const Student& orig) { //copy assignment operator
 }
 /**
  * Move constructor \n
- * orig - object to move from
+ * @param orig - object to move from
  */
 Student::Student(Student&& orig) { //move constructor
 	name_ = orig.name_;
@@ -96,7 +96,7 @@ Student::Student(Student&& orig) { //move constructor
 }
 /**
  * Move assignment operator \n
- * orig - object to move from
+ * @param orig - object to move from
  */
 Student& Student::operator=(Student&& orig) { //move assignment operator
 	if (&orig == this) return *this;
@@ -112,8 +112,8 @@ Student& Student::operator=(Student&& orig) { //move assignment operator
 }
 /**
  * Output operator \n
- * output - output stream \n
- * st - object to output \n
+ * @param output - output stream \n
+ * @param st - object to output \n
  * Outputs the surname, name, final mean and final median of the student
  */
 std::wostream& operator<<(std::wostream& output, const Student& st) {
@@ -124,8 +124,8 @@ std::wostream& operator<<(std::wostream& output, const Student& st) {
 }
 /**
  * Input operator \n
- * in - input stream \n
- * st - object to input \n
+ * @param in - input stream \n
+ * @param st - object to input \n
  * Inputs the name, surname, marks and exam mark of the student (only works for stdin)
  */
 std::wistream& operator>>(std::wistream& in, Student& st) {
