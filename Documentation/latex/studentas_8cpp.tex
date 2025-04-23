@@ -1,0 +1,53 @@
+\doxysection{studentas.\+cpp File Reference}
+\hypertarget{studentas_8cpp}{}\label{studentas_8cpp}\index{studentas.cpp@{studentas.cpp}}
+{\ttfamily \#include "{}../include/studentas.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wostream \& \mbox{\hyperlink{studentas_8cpp_aecbd03e72f3a1b73048b6a098fbe34ab}{operator$<$$<$}} (std\+::wostream \&output, const \mbox{\hyperlink{class_student}{Student}} \&st)
+\item 
+std\+::wistream \& \mbox{\hyperlink{studentas_8cpp_aa20c915cb1d45330db9d7eb7dd9b92c9}{operator$>$$>$}} (std\+::wistream \&in, \mbox{\hyperlink{class_student}{Student}} \&st)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{studentas_8cpp_aecbd03e72f3a1b73048b6a098fbe34ab}\index{studentas.cpp@{studentas.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_aecbd03e72f3a1b73048b6a098fbe34ab} 
+std\+::wostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::wostream \&}]{output}{, }\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{st}{}\end{DoxyParamCaption})}
+
+Output operator ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em output} & -\/ output stream ~\newline
+\\
+\hline
+{\em st} & -\/ object to output ~\newline
+Outputs the surname, name, final mean and final median of the student \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{studentas_8cpp_aa20c915cb1d45330db9d7eb7dd9b92c9}\index{studentas.cpp@{studentas.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_aa20c915cb1d45330db9d7eb7dd9b92c9} 
+std\+::wistream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::wistream \&}]{in}{, }\item[{\mbox{\hyperlink{class_student}{Student}} \&}]{st}{}\end{DoxyParamCaption})}
+
+Input operator ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em in} & -\/ input stream ~\newline
+\\
+\hline
+{\em st} & -\/ object to input ~\newline
+Inputs the name, surname, marks and exam mark of the student (only works for stdin) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+

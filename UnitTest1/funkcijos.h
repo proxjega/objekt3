@@ -1,0 +1,41 @@
+#pragma once
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <fstream>
+#include <iomanip>
+#include <sstream>
+#include <numeric>
+#include <random>
+#include <chrono>
+#include <locale>
+#include <codecvt>
+#include "studentas.h"
+//#include "templates.h"
+
+using std::wcin;
+using std::wcout;
+using std::wcerr;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::vector;
+using std::sort;
+using std::wcout;
+using std::wstringstream;
+using std::wstring;
+using std::getline;
+using std::wifstream;
+using std::string;
+using std::setw;
+using std::left;
+using std::setprecision;
+using std::fixed;
+
+bool CompareByVid(const Student &a, const Student &b);
+int InputTestNum();
+int InputMark();
+int InputMarkNum();
+int InputExamMark();
+int InputStrategy();
