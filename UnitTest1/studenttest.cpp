@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "CppUnitTest.h"
 #include "../vector/include/studentas.h"
 
