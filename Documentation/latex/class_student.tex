@@ -1,0 +1,370 @@
+\doxysection{Student Class Reference}
+\hypertarget{class_student}{}\label{class_student}\index{Student@{Student}}
+
+
+{\ttfamily \#include $<$studentas.\+h$>$}
+
+Inheritance diagram for Student\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_student}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}} ()
+\item 
+\mbox{\hyperlink{class_student_a16d906f6e3d6f85846f4a37d1d058e75}{Student}} (int pazymiu\+Sk)
+\item 
+\mbox{\hyperlink{class_student_aa29c6498aafb4a52bbfad23308b278e1}{Student}} (wstring name, wstring surname, int pazymiu\+Sk)
+\item 
+\mbox{\hyperlink{class_student_ac935485a9bc37044e827301875a048d7}{Student}} (wstring name, wstring surname, vector$<$ int $>$ marks, int exam\+Mark)
+\item 
+\mbox{\hyperlink{class_student_abc7b89cdd3f08d0a8c412c3e70ccc4ff}{Student}} (const \mbox{\hyperlink{class_student}{Student}} \&orig)
+\item 
+\mbox{\hyperlink{class_student}{Student}} \& \mbox{\hyperlink{class_student_a0d57870be2e10547c5aa42ba44dccd83}{operator=}} (const \mbox{\hyperlink{class_student}{Student}} \&orig)
+\item 
+\mbox{\hyperlink{class_student_a9a762dfad556fc96df42365d5e198d6c}{Student}} (\mbox{\hyperlink{class_student}{Student}} \&\&orig)
+\item 
+\mbox{\hyperlink{class_student}{Student}} \& \mbox{\hyperlink{class_student_a07d8731c6ff949c24da86555f3d554c9}{operator=}} (\mbox{\hyperlink{class_student}{Student}} \&\&orig)
+\item 
+\mbox{\hyperlink{class_student_a54a8ea060d6cd04222c3a2f89829f105}{\texorpdfstring{$\sim$}{\string~}\+Student}} ()
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_student_adc1cc1ab3231db00192ecbd31a592e6b}{get\+Marks}} () const
+\item 
+int \mbox{\hyperlink{class_student_a1fd355b9a10854aec4f3fe23da695b9d}{get\+Exam\+Mark}} () const
+\item 
+void \mbox{\hyperlink{class_student_a393e0c0481850a2bc316894c252ec8b2}{set\+Marks}} (std\+::vector$<$ int $>$ marks)
+\item 
+void \mbox{\hyperlink{class_student_a5cbdb6d7c8683ee6b9ced0454b22810f}{set\+Exam\+Mark}} (int exam\+Mark)
+\item 
+float \mbox{\hyperlink{class_student_ad1c2f9f8bed6e8bb3888a47d3672e145}{calculate\+Final\+Mean}} () const
+\item 
+float \mbox{\hyperlink{class_student_ad832c18ebb3a2013c937bccd30efca7b}{calculate\+Final\+Median}} () const
+\item 
+wstring \mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{output}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_human}{Human}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_human_a4f84fcddcedd434023a001eba00a095c}{Human}} ()
+\item 
+\mbox{\hyperlink{class_human_a8e3bd0d38daf4ba776f6c7742ce1b85e}{Human}} (wstring name, wstring surname)
+\item 
+virtual \mbox{\hyperlink{class_human_a93ca0fbf9e5b5bcb6f2f72eeb450219b}{\texorpdfstring{$\sim$}{\string~}\+Human}} ()
+\item 
+std\+::wstring \mbox{\hyperlink{class_human_a3b1e762bb852b0a1664ce868e8604b50}{get\+Name}} () const
+\item 
+std\+::wstring \mbox{\hyperlink{class_human_a68e6b3dda97b474f965957e6b2200c88}{get\+Surname}} () const
+\item 
+void \mbox{\hyperlink{class_human_abcfebdfcc98e270f9029213875d0ea53}{set\+Name}} (std\+::wstring name)
+\item 
+void \mbox{\hyperlink{class_human_a79aa4b7401c8c783ba06e023da2d5b35}{set\+Surname}} (std\+::wstring surname)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wostream \& \mbox{\hyperlink{class_student_aff0ff6064f79e0c5f7dc958ba752de57}{operator$<$$<$}} (std\+::wostream \&out, const \mbox{\hyperlink{class_student}{Student}} \&st)
+\item 
+std\+::wistream \& \mbox{\hyperlink{class_student_aa20c915cb1d45330db9d7eb7dd9b92c9}{operator$>$$>$}} (std\+::wistream \&in, \mbox{\hyperlink{class_student}{Student}} \&st)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_human}{Human}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wstring \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\+\_\+}}
+\item 
+std\+::wstring \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{studentas_8h_source_l00040}{40}} of file \mbox{\hyperlink{studentas_8h_source}{studentas.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily \label{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d} 
+Student\+::\+Student (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{studentas_8h_source_l00045}{45}} of file \mbox{\hyperlink{studentas_8h_source}{studentas.\+h}}.
+
+\Hypertarget{class_student_a16d906f6e3d6f85846f4a37d1d058e75}\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily \label{class_student_a16d906f6e3d6f85846f4a37d1d058e75} 
+Student\+::\+Student (\begin{DoxyParamCaption}\item[{int}]{pazymiu\+Sk}{}\end{DoxyParamCaption})}
+
+Constructor with 1 parameter ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em pazymiu\+Sk} & -\/ number of marks to generate randomly ~\newline
+Both name and surname are generated randomly \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_aa29c6498aafb4a52bbfad23308b278e1}\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily \label{class_student_aa29c6498aafb4a52bbfad23308b278e1} 
+Student\+::\+Student (\begin{DoxyParamCaption}\item[{wstring}]{name}{, }\item[{wstring}]{surname}{, }\item[{int}]{pazymiu\+Sk}{}\end{DoxyParamCaption})}
+
+Constructor with 3 parameters ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of the student ~\newline
+\\
+\hline
+{\em surname} & -\/ surname of the student ~\newline
+\\
+\hline
+{\em pazymiu\+Sk} & -\/ number of marks to generate randomly \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_ac935485a9bc37044e827301875a048d7}\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily \label{class_student_ac935485a9bc37044e827301875a048d7} 
+Student\+::\+Student (\begin{DoxyParamCaption}\item[{wstring}]{name}{, }\item[{wstring}]{surname}{, }\item[{vector$<$ int $>$}]{marks}{, }\item[{int}]{exam\+Mark}{}\end{DoxyParamCaption})}
+
+Constructor with 4 parameters ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em name} & -\/ name of the student ~\newline
+\\
+\hline
+{\em surname} & -\/ surname of the student ~\newline
+\\
+\hline
+{\em marks} & -\/ vector of marks ~\newline
+\\
+\hline
+{\em exam\+Mark} & -\/ exam mark \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_abc7b89cdd3f08d0a8c412c3e70ccc4ff}\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily \label{class_student_abc7b89cdd3f08d0a8c412c3e70ccc4ff} 
+Student\+::\+Student (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{orig}{}\end{DoxyParamCaption})}
+
+Copy constructor ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & -\/ object to copy from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_a9a762dfad556fc96df42365d5e198d6c}\index{Student@{Student}!Student@{Student}}
+\index{Student@{Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{Student()}{Student()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily \label{class_student_a9a762dfad556fc96df42365d5e198d6c} 
+Student\+::\+Student (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_student}{Student}} \&\&}]{orig}{}\end{DoxyParamCaption})}
+
+Move constructor ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & -\/ object to move from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_a54a8ea060d6cd04222c3a2f89829f105}\index{Student@{Student}!````~Student@{\texorpdfstring{$\sim$}{\string~}Student}}
+\index{````~Student@{\texorpdfstring{$\sim$}{\string~}Student}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Student()}{\string~Student()}}
+{\footnotesize\ttfamily \label{class_student_a54a8ea060d6cd04222c3a2f89829f105} 
+Student\+::\texorpdfstring{$\sim$}{\string~}\+Student (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00174}{174}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_student_ad1c2f9f8bed6e8bb3888a47d3672e145}\index{Student@{Student}!calculateFinalMean@{calculateFinalMean}}
+\index{calculateFinalMean@{calculateFinalMean}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{calculateFinalMean()}{calculateFinalMean()}}
+{\footnotesize\ttfamily \label{class_student_ad1c2f9f8bed6e8bb3888a47d3672e145} 
+float Student\+::calculate\+Final\+Mean (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Function to calculate the final mean of the student ~\newline
+Returns the final mean of the student 
+
+Implements \mbox{\hyperlink{class_human_a8471e837317da67a3db0bd529c7120a2}{Human}}.
+
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00184}{184}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_ad832c18ebb3a2013c937bccd30efca7b}\index{Student@{Student}!calculateFinalMedian@{calculateFinalMedian}}
+\index{calculateFinalMedian@{calculateFinalMedian}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{calculateFinalMedian()}{calculateFinalMedian()}}
+{\footnotesize\ttfamily \label{class_student_ad832c18ebb3a2013c937bccd30efca7b} 
+float Student\+::calculate\+Final\+Median (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Function to calculate the final median of the student ~\newline
+Returns the final median of the student 
+
+Implements \mbox{\hyperlink{class_human_af50f48f01b7e30ebd0e5e4aef12a4f1d}{Human}}.
+
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00193}{193}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_a1fd355b9a10854aec4f3fe23da695b9d}\index{Student@{Student}!getExamMark@{getExamMark}}
+\index{getExamMark@{getExamMark}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getExamMark()}{getExamMark()}}
+{\footnotesize\ttfamily \label{class_student_a1fd355b9a10854aec4f3fe23da695b9d} 
+int Student\+::get\+Exam\+Mark (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{studentas_8h_source_l00061}{61}} of file \mbox{\hyperlink{studentas_8h_source}{studentas.\+h}}.
+
+\Hypertarget{class_student_adc1cc1ab3231db00192ecbd31a592e6b}\index{Student@{Student}!getMarks@{getMarks}}
+\index{getMarks@{getMarks}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{getMarks()}{getMarks()}}
+{\footnotesize\ttfamily \label{class_student_adc1cc1ab3231db00192ecbd31a592e6b} 
+std\+::vector$<$ int $>$ Student\+::get\+Marks (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{studentas_8h_source_l00060}{60}} of file \mbox{\hyperlink{studentas_8h_source}{studentas.\+h}}.
+
+\Hypertarget{class_student_a0d57870be2e10547c5aa42ba44dccd83}\index{Student@{Student}!operator=@{operator=}}
+\index{operator=@{operator=}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_student_a0d57870be2e10547c5aa42ba44dccd83} 
+\mbox{\hyperlink{class_student}{Student}} \& Student\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{orig}{}\end{DoxyParamCaption})}
+
+Copy assignment operator ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & -\/ object to copy from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_a07d8731c6ff949c24da86555f3d554c9}\index{Student@{Student}!operator=@{operator=}}
+\index{operator=@{operator=}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_student_a07d8731c6ff949c24da86555f3d554c9} 
+\mbox{\hyperlink{class_student}{Student}} \& Student\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_student}{Student}} \&\&}]{orig}{}\end{DoxyParamCaption})}
+
+Move assignment operator ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em orig} & -\/ object to move from \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_a7145d44b06b3ef58c12f30fe74f96305}\index{Student@{Student}!output@{output}}
+\index{output@{output}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily \label{class_student_a7145d44b06b3ef58c12f30fe74f96305} 
+wstring Student\+::output (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Function to output the student object ~\newline
+Required for testing 
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00206}{206}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_a5cbdb6d7c8683ee6b9ced0454b22810f}\index{Student@{Student}!setExamMark@{setExamMark}}
+\index{setExamMark@{setExamMark}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{setExamMark()}{setExamMark()}}
+{\footnotesize\ttfamily \label{class_student_a5cbdb6d7c8683ee6b9ced0454b22810f} 
+void Student\+::set\+Exam\+Mark (\begin{DoxyParamCaption}\item[{int}]{exam\+Mark}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{studentas_8h_source_l00064}{64}} of file \mbox{\hyperlink{studentas_8h_source}{studentas.\+h}}.
+
+\Hypertarget{class_student_a393e0c0481850a2bc316894c252ec8b2}\index{Student@{Student}!setMarks@{setMarks}}
+\index{setMarks@{setMarks}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{setMarks()}{setMarks()}}
+{\footnotesize\ttfamily \label{class_student_a393e0c0481850a2bc316894c252ec8b2} 
+void Student\+::set\+Marks (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{marks}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{studentas_8h_source_l00063}{63}} of file \mbox{\hyperlink{studentas_8h_source}{studentas.\+h}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_student_aff0ff6064f79e0c5f7dc958ba752de57}\index{Student@{Student}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_student_aff0ff6064f79e0c5f7dc958ba752de57} 
+std\+::wostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::wostream \&}]{out}{, }\item[{const \mbox{\hyperlink{class_student}{Student}} \&}]{st}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Output operator ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em output} & -\/ output stream ~\newline
+\\
+\hline
+{\em st} & -\/ object to output ~\newline
+Outputs the surname, name, final mean and final median of the student \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00119}{119}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+\Hypertarget{class_student_aa20c915cb1d45330db9d7eb7dd9b92c9}\index{Student@{Student}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Student@{Student}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_student_aa20c915cb1d45330db9d7eb7dd9b92c9} 
+std\+::wistream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::wistream \&}]{in}{, }\item[{\mbox{\hyperlink{class_student}{Student}} \&}]{st}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Input operator ~\newline
+
+\begin{DoxyParams}{Parameters}
+{\em in} & -\/ input stream ~\newline
+\\
+\hline
+{\em st} & -\/ object to input ~\newline
+Inputs the name, surname, marks and exam mark of the student (only works for stdin) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{studentas_8cpp_source_l00131}{131}} of file \mbox{\hyperlink{studentas_8cpp_source}{studentas.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{studentas_8h}{studentas.\+h}}\item 
+\mbox{\hyperlink{studentas_8cpp}{studentas.\+cpp}}\end{DoxyCompactItemize}

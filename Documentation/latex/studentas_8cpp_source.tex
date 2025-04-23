@@ -1,0 +1,160 @@
+\doxysection{studentas.\+cpp}
+\hypertarget{studentas_8cpp_source}{}\label{studentas_8cpp_source}\mbox{\hyperlink{studentas_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../include/studentas.h"{}}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00003}\mbox{\hyperlink{class_human_a93ca0fbf9e5b5bcb6f2f72eeb450219b}{00003}}\ \mbox{\hyperlink{class_human_a93ca0fbf9e5b5bcb6f2f72eeb450219b}{Human::\string~Human}}()\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00004}00004\ \ \ \ \ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ =\ L\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ =\ L\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00006}00006\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00015}\mbox{\hyperlink{class_student_ac935485a9bc37044e827301875a048d7}{00015}}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student::Student}}(wstring\ name,\ wstring\ surname,\ vector<int>\ marks,\ \textcolor{keywordtype}{int}\ examMark)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ =\ name;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00017}00017\ \ \ \ \ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ =\ surname;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00018}00018\ \ \ \ \ marks\_\ =\ marks;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00019}00019\ \ \ \ \ examMark\_\ =\ examMark;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00027}\mbox{\hyperlink{class_student_aa29c6498aafb4a52bbfad23308b278e1}{00027}}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student::Student}}(wstring\ name,\ wstring\ surname,\ \textcolor{keywordtype}{int}\ pazymiuSk)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00028}00028\ \ \ \ \ std::random\_device\ rd;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00029}00029\ \ \ \ \ std::mt19937\ mt(rd());}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00030}00030\ \ \ \ \ std::uniform\_int\_distribution<int>\ dist(1,\ 10);}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ pazymiuSk;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ marks\_.push\_back(dist(mt));}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ std::wcout\ <<\ L\textcolor{stringliteral}{"{}Generuotas\ pazymys:\ "{}}\ <<\ marks\_[i]\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00035}00035\ \ \ \ \ examMark\_\ =\ dist(mt);}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00036}00036\ \ \ \ \ std::wcout\ <<\ L\textcolor{stringliteral}{"{}Generuotas\ egzamino\ pazymys:\ "{}}\ <<\ examMark\_\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ =\ name;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ =\ surname;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00039}00039\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00045}\mbox{\hyperlink{class_student_a16d906f6e3d6f85846f4a37d1d058e75}{00045}}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student::Student}}(\textcolor{keywordtype}{int}\ pazymiuSk)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00046}00046\ \ \ \ \ std::random\_device\ rd;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00047}00047\ \ \ \ \ std::mt19937\ mt(rd());}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00048}00048\ \ \ \ \ std::uniform\_int\_distribution<int>\ dist(1,\ 10);}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ pazymiuSk;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ marks\_.push\_back(dist(mt));}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ std::wcout\ <<\ L\textcolor{stringliteral}{"{}Generuotas\ pazymys:\ "{}}\ <<\ marks\_[i]\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00053}00053\ \ \ \ \ examMark\_\ =\ dist(mt);}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00054}00054\ \ \ \ \ std::wcout\ <<\ L\textcolor{stringliteral}{"{}Generuotas\ egzamino\ pazymys:\ "{}}\ <<\ examMark\_\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00055}00055\ \ \ \ \ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ =\ L\textcolor{stringliteral}{"{}name"{}}\ +\ std::to\_wstring(dist(mt));}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00056}00056\ \ \ \ \ wcout\ <<\ L\textcolor{stringliteral}{"{}Generuotas\ vardas:\ "{}}\ <<\ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ =\ L\textcolor{stringliteral}{"{}surname"{}}\ +\ std::to\_wstring(dist(mt));}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00058}00058\ \ \ \ \ wcout\ <<\ L\textcolor{stringliteral}{"{}Generuota\ pavarde:\ "{}}\ <<\ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00064}\mbox{\hyperlink{class_student_abc7b89cdd3f08d0a8c412c3e70ccc4ff}{00064}}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student::Student}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ orig)\ \{\ \textcolor{comment}{//copy\ constructor}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ =\ orig.\mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ =\ orig.\mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00067}00067\ \ \ \ \ marks\_\ =\ orig.marks\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00068}00068\ \ \ \ \ examMark\_\ =\ orig.examMark\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00074}\mbox{\hyperlink{class_student_a0d57870be2e10547c5aa42ba44dccd83}{00074}}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ \mbox{\hyperlink{class_student_a0d57870be2e10547c5aa42ba44dccd83}{Student::operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ orig)\ \{\ \textcolor{comment}{//copy\ assignment\ operator}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{this}\ !=\ \&orig)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ =\ orig.\mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ =\ orig.\mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ marks\_\ =\ orig.marks\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ examMark\_\ =\ orig.examMark\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00082}00082\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00087}\mbox{\hyperlink{class_student_a9a762dfad556fc96df42365d5e198d6c}{00087}}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student::Student}}(\mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\&\ orig)\ \{\ \textcolor{comment}{//move\ constructor}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00088}00088\ \ \ \ \ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ =\ orig.name\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ =\ orig.surname\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00090}00090\ \ \ \ \ marks\_\ =\ std::move(orig.marks\_);}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00091}00091\ \ \ \ \ examMark\_\ =\ orig.examMark\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00092}00092\ \ \ \ \ orig.name\_\ =\ L\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00093}00093\ \ \ \ \ orig.surname\_\ =\ L\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00094}00094\ \ \ \ \ orig.marks\_.clear();}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00095}00095\ \ \ \ \ orig.examMark\_\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00096}00096\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00101}\mbox{\hyperlink{class_student_a07d8731c6ff949c24da86555f3d554c9}{00101}}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ \mbox{\hyperlink{class_student_a0d57870be2e10547c5aa42ba44dccd83}{Student::operator=}}(\mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\&\ orig)\ \{\ \textcolor{comment}{//move\ assignment\ operator}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keywordflow}{if}\ (\&orig\ ==\ \textcolor{keyword}{this})\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00103}00103\ \ \ \ \ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ =\ orig.name\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00104}00104\ \ \ \ \ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ =\ orig.surname\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00105}00105\ \ \ \ \ marks\_\ =\ std::move(orig.marks\_);}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00106}00106\ \ \ \ \ examMark\_\ =\ orig.examMark\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00107}00107\ \ \ \ \ orig.name\_\ =\ L\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00108}00108\ \ \ \ \ orig.surname\_\ =\ L\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00109}00109\ \ \ \ \ orig.marks\_.clear();}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00110}00110\ \ \ \ \ orig.examMark\_\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00119}\mbox{\hyperlink{class_student_aff0ff6064f79e0c5f7dc958ba752de57}{00119}}\ std::wostream\&\ \mbox{\hyperlink{studentas_8cpp_aecbd03e72f3a1b73048b6a098fbe34ab}{operator<<}}(std::wostream\&\ \mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{output}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ st)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00120}00120\ \ \ \ \ \mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{output}}\ <<\ setw(17)\ <<\ left\ <<\ st.\mbox{\hyperlink{class_human_a68e6b3dda97b474f965957e6b2200c88}{getSurname}}()\ <<\ setw(17)\ <<\ left}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ <<\ st.\mbox{\hyperlink{class_human_a3b1e762bb852b0a1664ce868e8604b50}{getName}}()\ <<\ setw(20)\ <<\ left\ <<\ setprecision(2)\ <<\ fixed}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ <<\ st.\mbox{\hyperlink{class_student_ad1c2f9f8bed6e8bb3888a47d3672e145}{calculateFinalMean}}()\ <<\ setw(15)\ <<\ left\ <<\ setprecision(2)\ <<\ fixed\ <<\ st.\mbox{\hyperlink{class_student_ad832c18ebb3a2013c937bccd30efca7b}{calculateFinalMedian}}()\ <<\ L\textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{output}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00124}00124\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00131}\mbox{\hyperlink{class_student_aa20c915cb1d45330db9d7eb7dd9b92c9}{00131}}\ std::wistream\&\ \mbox{\hyperlink{studentas_8cpp_aa20c915cb1d45330db9d7eb7dd9b92c9}{operator>>}}(std::wistream\&\ in,\ \mbox{\hyperlink{class_student_af9168cedbfa5565cf0b20c1a9d3f5c9d}{Student}}\&\ st)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00132}00132\ \ \ \ \ wcout\ <<\ L\textcolor{stringliteral}{"{}Iveskite\ vardą,\ pavardę\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00133}00133\ \ \ \ \ in\ >>\ st.\mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ >>\ st.\mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00134}00134\ \ \ \ \ wcout\ <<\ L\textcolor{stringliteral}{"{}Iveskite\ pažymius\ (0\ -\/\ pabaigti)\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mark\ =\ \mbox{\hyperlink{studentas_8h_a28e3848e19be7f1f33e8bcf52781f87e}{InputMark}}();}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mark\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (st.marks\_.size()\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{throw}\ L\textcolor{stringliteral}{"{}\(\backslash\)007Įveskite\ bent\ vieną\ pažymį"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ st.marks\_.push\_back(mark);}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ wcerr\ <<\ e\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (...)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ wcerr\ <<\ L\textcolor{stringliteral}{"{}\(\backslash\)007Nežinoma\ klaida"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00156}00156\ \ \ \ \ wcout\ <<\ L\textcolor{stringliteral}{"{}Įveskite\ egzamino\ pažymį:\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ st.examMark\_\ =\ \mbox{\hyperlink{studentas_8h_a277860ecc0b74e9b22cad9600c1c4367}{InputExamMark}}();}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ \textcolor{keywordtype}{wchar\_t}*\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ wcerr\ <<\ e\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (...)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ wcerr\ <<\ L\textcolor{stringliteral}{"{}\(\backslash\)007Nežinoma\ klaida"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00170}00170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00171}00171\ \ \ \ \ \textcolor{keywordflow}{return}\ in;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00172}00172\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00174}\mbox{\hyperlink{class_student_a54a8ea060d6cd04222c3a2f89829f105}{00174}}\ \mbox{\hyperlink{class_student_a54a8ea060d6cd04222c3a2f89829f105}{Student::\string~Student}}()\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00175}00175\ \ \ \ \ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ =\ L\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00176}00176\ \ \ \ \ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}}\ =\ L\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00177}00177\ \ \ \ \ marks\_.clear();}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00178}00178\ \ \ \ \ examMark\_\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00179}00179\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00184}\mbox{\hyperlink{class_student_ad1c2f9f8bed6e8bb3888a47d3672e145}{00184}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_student_ad1c2f9f8bed6e8bb3888a47d3672e145}{Student::calculateFinalMean}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00185}00185\ \ \ \ \ vector<int>\ marks\ =\ \mbox{\hyperlink{class_student_adc1cc1ab3231db00192ecbd31a592e6b}{getMarks}}();}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{if}\ (marks.size()\ ==\ 0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00187}00187\ \ \ \ \ \textcolor{keywordflow}{return}\ 0.4\ *\ ((std::accumulate(marks.begin(),\ marks.end(),\ 0)\ *\ 1.0)\ /\ (marks.size()\ *\ 1.0))\ +\ 0.6\ *\ examMark\_;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00188}00188\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00193}\mbox{\hyperlink{class_student_ad832c18ebb3a2013c937bccd30efca7b}{00193}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{class_student_ad832c18ebb3a2013c937bccd30efca7b}{Student::calculateFinalMedian}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00194}00194\ \ \ \ \ vector<int>\ marks\ =\ \mbox{\hyperlink{class_student_adc1cc1ab3231db00192ecbd31a592e6b}{getMarks}}();}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{if}\ (marks.size()\ ==\ 0)\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{keywordtype}{float}\ median\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00197}00197\ \ \ \ \ std::sort(marks.begin(),\ marks.end());}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00198}00198\ \ \ \ \ (marks.size()\ \%\ 2\ !=\ 0)\ ?\ median\ =\ marks[marks.size()\ /\ 2]\ :\ median\ =\ (marks[marks.size()\ /\ 2]\ +\ marks[marks.size()\ /\ 2\ -\/\ 1])\ /\ 2.0;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00199}00199\ \ \ \ \ median\ =\ median\ *\ 0.4\ +\ examMark\_\ *\ 0.6;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{return}\ median;}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00201}00201\ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00206}\mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{00206}}\ wstring\ \mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{Student::output}}()\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00207}00207\ \ \ \ \ wstring\ \mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{output}}\ =\ \mbox{\hyperlink{class_human_abb4d39337e546aa8798e0f948b51cb17}{name\_}}\ +\ \mbox{\hyperlink{class_human_aa24aba8ca59ce597fba41f052fef5c95}{surname\_}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00208}00208\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ marks\_.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{output}}\ +=\ std::to\_wstring(marks\_[i])\ +\ L\textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00210}00210\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00211}00211\ \ \ \ \ \mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{output}}\ +=\ std::to\_wstring(examMark\_);}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_student_a7145d44b06b3ef58c12f30fe74f96305}{output}};}
+\DoxyCodeLine{\Hypertarget{studentas_8cpp_source_l00213}00213\ \}}
+
+\end{DoxyCode}
