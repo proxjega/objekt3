@@ -1,5 +1,5 @@
-﻿#include "../include/studentas.h"
-#include "../../UnitTest1/pch.h"
+﻿#include "pch.h"
+#include "studentas.h"
 
 Human::~Human() {
 	name_ = L"";
