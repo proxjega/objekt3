@@ -15,7 +15,7 @@ private:
 	T* begin_;
 	T* end_;
 public:
-	/** Basic Constructor
+	/**
 	* @brief Creates an empty vector with default capacity of 10
 	*/
 	myVector() { // basic constructor
@@ -25,7 +25,7 @@ public:
 		begin_ = data_;
 		end_ = data_;
 	}
-	/** Fill constructor 
+	/**
 	* @brief Creates a vector with given size and fills it with given value \n
 	* @param num - size of the vector \n
 	* @param val - value to fill the vector with
@@ -40,7 +40,7 @@ public:
 		begin_ = &data_[0];
 		end_ = &data_[size_];
 	}
-	/** Range constructor
+	/**
 	* @brief Creates a vector with values from given range \n
 	* @param begin - pointer to the beginning of the range \n
 	* @param end - pointer to the end of the range
@@ -55,7 +55,7 @@ public:
 		begin_ = &data_[0];
 		end_ = &data_[size_];
 	}
-	/** Copy constructor
+	/**
 	* @brief Creates a vector with values from given vector. Values in original vector are not moved \n
 	* @param other - vector to copy from
 	*/
@@ -69,7 +69,7 @@ public:
 		begin_ = &data_[0];
 		end_ = &data_[size_];
 	}
-	/** Move constructor
+	/**
 	* @brief Creates a vector with values from given vector and "moves" the values from it \n
 	* @param other - vector to move from
 	*/
@@ -85,7 +85,7 @@ public:
 		other.begin_ = nullptr;
 		other.end_ = nullptr;
 	}
-	/** Initializer list constructor \n
+	/**
 	* @brief Creates a vector with values from given initializer list \n
 	* @param list - initializer list to copy from
 	*/
@@ -97,7 +97,7 @@ public:
 		begin_ = &data_[0];
 		end_ = &data_[size_];
 	}
-	/** Operator = with initalizer list \n
+	/**
 	* @brief Assigns values from given initializer list to the vector \n
 	* @param list - initializer list to copy from \n
 	* @returns the vector
@@ -112,7 +112,7 @@ public:
 		end_ = &data_[size_];
 		return *this;
 	}
-	/** Copy assignment operator \n
+	/**
 	* @brief Assigns values from given vector to the vector. Values in original vector are not moved \n
 	* @param other - vector to copy from \n
 	* @returns the vector \n
@@ -131,7 +131,7 @@ public:
 		end_ = &data_[size_];
 		return *this;
 	}
-	/** Move assignment operator
+	/**
 	* @brief Assigns values from given vector to the vector and "moves" the values from it \n
 	* @param other - vector to move from \n
 	* @returns the vector \n
@@ -152,7 +152,7 @@ public:
 		other.begin_ = nullptr;
 		return *this;
 	}
-	/** Destructor
+	/**
 	* @brief Frees the memory and resets size_, capacity_, begin_ and end_
 	*/
 	~myVector() {
@@ -162,49 +162,49 @@ public:
 		begin_ = nullptr;
 		end_ = nullptr;
 	}
-	/** Size
+	/**
 	* @brief Returns the size of the vector \n
 	* @return Size of vector (integer)
 	*/
 	int size() const {
 		return size_;
 	}
-	/** Capacity
+	/**
 	* @brief Returns the capacity of the vector \n
 	* @return Capacity of vector (integer)
 	*/
 	int capacity() const {
 		return capacity_;
 	}
-	/** Begin
+	/**
 	* @brief Returns the pointer to the beginning of the vector \n
 	* @return Pointer to the beginning of the vector (template typename T*)
 	*/
 	T* begin() {
 		return begin_;
 	}
-	/** Const begin
+	/**
 	* @brief Returns the pointer to the beginning of the vector, but as const \n
 	* @return Pointer to the beginning of the vector (template typename T*)
 	*/
 	T* cbegin() const {
 		return begin_;
 	}
-	/** End
+	/**
 	* @brief Returns the pointer to element past the end of the vector \n
 	* @return Pointer to element past the end of the vector (template typename T*)
 	*/
 	T* end() {
 		return end_;
 	}
-	/** Const end
+	/**
 	* @brief Returns the pointer to element past the end of the vector, but as const \n
 	* @return Pointer to element past the end of the vector (template typename T*)
 	*/
 	T* cend() const {
 		return end_;
 	}
-	/** Front
+	/**
 	* @brief Returns the first element of the vector \n
 	* @return First element of the vector (template typename T)
 	*/
@@ -212,7 +212,7 @@ public:
 		if (this->empty()) throw std::out_of_range("Vector is empty");
 		return *begin_;
 	}
-	/** Back
+	/**
 	* @brief Returns the last element of the vector \n
 	* @return Last element of the vector (template typename T)
 	*/
@@ -220,7 +220,7 @@ public:
 		if (this->empty()) throw std::out_of_range("Vector is empty");
 		return *(end_ - 1);
 	}
-	/** Operator []
+	/**
 	* @brief Returns the element at given index \n
 	* @param index - index of the element \n
 	* @return Element at given index (template typename T)
@@ -229,7 +229,7 @@ public:
 		//if (index < 0 || index >= size_) throw std::out_of_range("Out of range!");
 		return this->data_[index];
 	}
-	/** At
+	/**
 	* @brief Returns the element at given index (with bounds checking) \n
 	* @param index - index of the element \n
 	* @return Element at given index (template typename T)
@@ -242,7 +242,7 @@ public:
 		}
 		return data_[index];
 	}
-	/** Push back
+	/**
 	* @brief Adds an element to the end of the vector. If the vector is full, it doubles the capacity. \n
 	* @param value - value to add
 	*/
@@ -276,7 +276,7 @@ public:
 			
 		}
 	}
-	/** Pop back
+	/**
 	* @brief Removes the last element of the vector
 	*/
 	void pop_back() {
@@ -285,7 +285,7 @@ public:
 		size_ = size_-1;
 		end_ = end_-1;
 	}
-	/** Empty
+	/**
 	* @brief Checks if the vector is empty \n
 	* @return True if the vector is empty, false otherwise (bool)
 	*/
@@ -293,7 +293,7 @@ public:
 		if (begin_ == end_) return true;
 		return false;
 	}
-	/** Reserve
+	/**
 	* @brief Reserves memory for the vector. If the given number is smaller than the current capacity, it does nothing \n
 	* @param num - number of elements to reserve memory for
 	*/
@@ -310,7 +310,7 @@ public:
 		end_ = &data_[size_];
 		temp = nullptr;
 	}
-	/** Shrink to fit
+	/**
 	* @brief Shrinks the vector to fit the current size. If the capacity is equal to the size, it does nothing
 	*/
 	void shrink_to_fit() {
@@ -326,7 +326,7 @@ public:
 		end_ = &data_[size_];
 		temp = nullptr;
 	}
-	/** Clear
+	/**
 	* @brief Clears the vector. Frees the old memory, but the capacity remains the same.
 	*/
     void clear() {
@@ -337,7 +337,7 @@ public:
 	   begin_ = data_;
        end_ = begin_;
     }
-	/** Output
+	/**
 	* @brief Outputs the vector to a string (for testing purposes) \n
 	* @return String with the vector values (std::wstring)
 	*/
@@ -354,7 +354,7 @@ public:
 		str = out.str();
 		return str;
 	}	
-	/** Equal operator
+	/**
 	* @brief Compares two vectors. If the sizes are different, it returns false. If the sizes are the same, it compares the elements. \n
 	* @return True if the vectors are equal, false otherwise (bool)
 	*/
@@ -365,7 +365,7 @@ public:
 		}
 		return true;
 	}
-	/** Not equal operator
+	/**
 	* @brief Compares two vectors. If the sizes are different, it returns true. If the sizes are the same, it compares the elements. \n
 	* @param second - vector to compare with \n
 	* @return True if the vectors are not equal, false otherwise (bool)
@@ -377,7 +377,7 @@ public:
 		}
 		return false;
 	}
-	/** Assign
+	/**
 	* @brief Replaces the elements with num copies of val value.\n
 	* @param num - number of elements to replace \n
 	* @param val - value to replace with
@@ -406,7 +406,7 @@ public:
 		}
 	}
 	
-	/** Assign (range)
+	/**
 	* @brief Replaces the elements with elements from range from start to end \n
 	* @param start - pointer to a start of a range \n
 	* @param end - pointer to an end of a range
@@ -435,14 +435,14 @@ public:
 			end_ = &data_[size_];
 		}
 	}
-	/** Data
+	/**
 	* @brief Returns pointer to the underlying array
 	* @return Pointer to start of the data_ array
 	*/
 	T* data() const {
 		return &data_[0];
 	}
-	/** Insert
+	/**
 	* @brief Inserts an copy of element val into place before position pos
 	* @param pos - pointer to position
 	* @param val - value to insert
@@ -474,7 +474,7 @@ public:
 			end_ = &data_[size_];
 		}
 	}
-	/** Insert 2
+	/**
 	* @brief Inserts a num copies of element val into place before position pos
 	* @param pos - pointer to position
 	* @param num - number of copies to insert
