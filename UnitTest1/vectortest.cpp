@@ -251,5 +251,23 @@ namespace vectortest
 			Assert::AreEqual(v1.at(0), v2.at(0));
 			Assert::AreEqual(v1.output(), v3.output());
 		}
+		TEST_METHOD(Assign)
+		{
+			Logger::WriteMessage("Assign");
+			myVector<int> v1;
+			v1.reserve(2);
+			myVector<int> v2(10,10);
+			std::vector<int> v3;
+			myVector<int> v4;
+			v1.assign(10, 10);
+			v3.assign(10, 10);
+			v4.assign(v2.begin(), v2.end());
+			Assert::AreEqual(v1.size(), 10);
+			Assert::AreEqual(v1.output(), v2.output());
+			Assert::AreEqual(v4.output(), v2.output());
+			for (int i = 0; i < 10; i++) {
+				Assert::AreEqual(v1.at(i), v3.at(i));
+			}
+		}
 	};
 }
