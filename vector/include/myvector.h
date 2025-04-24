@@ -443,7 +443,7 @@ public:
 		return &data_[0];
 	}
 	/** Insert
-	* @brief Inserts an element val into place before position pos
+	* @brief Inserts an copy of element val into place before position pos
 	* @param pos - pointer to position
 	* @param val - value to insert
 	*/
