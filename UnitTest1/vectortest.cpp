@@ -321,7 +321,6 @@ namespace vectortest
 			Assert::AreEqual(v1.at(0), 10);
 			v1.insert(v1.begin()+3, 444);
 			Assert::AreEqual(v1.at(3), 444);
-
 		}
 	};
 }

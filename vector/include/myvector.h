@@ -486,7 +486,7 @@ public:
 			for (auto it = end_ + num - 1; it != pos; it--) {
 				*it = *(it - num);
 			}
-			for (int i = num; i > 0; i++) {
+			for (int i = num; i > 0; i--) {
 				data_[index + i - 1] = val;
 			}
 			size_ = size_ + num;
@@ -507,7 +507,7 @@ public:
 			delete[] data_;
 			data_ = temp;
 			begin_ = data_;
-			size_++;
+			size_ = size_ + num;
 			end_ = &data_[size_];
 		}
 	}
