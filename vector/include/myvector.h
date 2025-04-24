@@ -30,7 +30,7 @@ public:
 	* @param num - size of the vector \n
 	* @param val - value to fill the vector with
 	*/
-	myVector(int num, T val) { // fill constructor
+	myVector(const int& num, const T& val) { // fill constructor
 		size_ = num;
 		capacity_ = num;
 		data_ = new T[capacity_];
@@ -45,7 +45,7 @@ public:
 	* @param begin - pointer to the beginning of the range \n
 	* @param end - pointer to the end of the range
 	*/
-	myVector(T* begin, T* end) { //range constructor
+	myVector(const T* begin, const T* end) { //range constructor
 		size_ = end - begin;
 		capacity_ = size_;
 		data_ = new T[capacity_];
@@ -225,7 +225,7 @@ public:
 	* @param index - index of the element \n
 	* @return Element at given index (template typename T)
 	*/
-	T& operator[] (int index) const noexcept {
+	T& operator[] (const int& index) const noexcept {
 		//if (index < 0 || index >= size_) throw std::out_of_range("Out of range!");
 		return this->data_[index];
 	}
@@ -234,7 +234,7 @@ public:
 	* @param index - index of the element \n
 	* @return Element at given index (template typename T)
 	*/
-	T& at(int index) const {
+	T& at(const int& index) const {
 		if (index < 0 || index >= size_) {
 			throw std::out_of_range("Out of range!");
 			std::wcerr << "Out of range!";
@@ -297,7 +297,7 @@ public:
 	* @brief Reserves memory for the vector. If the given number is smaller than the current capacity, it does nothing \n
 	* @param num - number of elements to reserve memory for
 	*/
-	void reserve(int num) {
+	void reserve(const int& num) {
 		if (num <= capacity_) return;
 		capacity_ = num;
 		T* temp = new T[capacity_];
@@ -441,5 +441,74 @@ public:
 	*/
 	T* data() const {
 		return &data_[0];
+	}
+	/** Insert
+	* @brief Inserts an element val into place before position pos
+	* @param pos - pointer to position
+	* @param val - value to insert
+	*/
+	void insert(const T* pos,  const T& val) {
+		int index = pos - begin_;
+		if (size_ + 1 <= capacity_) {
+			for (auto it = end_; it != pos; it--) {
+				*it = *(it - 1);
+			}
+			data_[index] = val;
+			size_++;
+			end_ = &data_[size_];
+		}
+		else {
+			capacity_ = capacity_ * 2;
+			T* temp = new T[capacity_];
+			for (int i = 0; i != index; i++) {
+				temp[i] = data_[i];
+			}
+			temp[index] = val;
+			for (int i = index; i < size_; i++) {
+				temp[i+1] = data_[i];
+			}
+			delete[] data_;
+			data_ = temp;
+			begin_ = data_;
+			size_++;
+			end_ = &data_[size_];
+		}
+	}
+	/** Insert 2
+	* @brief Inserts a num copies of element val into place before position pos
+	* @param pos - pointer to position
+	* @param num - number of copies to insert
+	* @param val - value to insert
+	*/
+	void insert(const T* pos, const int num, const T& val) {
+		int index = pos - begin_;
+		if (size_ + num <= capacity_) {
+			for (auto it = end_ + num - 1; it != pos; it--) {
+				*it = *(it - num);
+			}
+			for (int i = num; i > 0; i++) {
+				data_[index + i - 1] = val;
+			}
+			size_ = size_ + num;
+			end_ = &data_[size_];
+		}
+		else {
+			capacity_ = capacity_ + num;
+			T* temp = new T[capacity_];
+			for (int i = 0; i != index; i++) {
+				temp[i] = data_[i];
+			}
+			for (int i = index; i < index + num; i++) {
+				temp[i] = val;
+			}
+			for (int i = index; i < size_; i++) {
+				temp[i + num] = data_[i];
+			}
+			delete[] data_;
+			data_ = temp;
+			begin_ = data_;
+			size_++;
+			end_ = &data_[size_];
+		}
 	}
 };

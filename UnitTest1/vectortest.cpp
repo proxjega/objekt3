@@ -282,6 +282,45 @@ namespace vectortest
 			Assert::AreEqual(*v2.data(), 1);
 			Assert::AreEqual(v3.data(), v3.begin());
 			Assert::AreEqual(*v3.data(), 12.2);
+		}
+		TEST_METHOD(Insert)
+		{
+			Logger::WriteMessage("Insert");
+			myVector<int> v1;
+			std::vector<int> v2;
+			for (int i = 0; i < 10; i++) {
+				v1.push_back(i);
+				v2.push_back(i);
+			}
+			v1.insert(v1.begin() + 5, 100);
+			v2.insert(v2.begin() + 5, 100);
+			Assert::AreEqual(v1.size(), static_cast<int>(v2.size()));
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}
+			v1.insert(v1.begin() + 5, 3, 100);
+			v2.insert(v2.begin() + 5, 3, 100);
+			Assert::AreEqual(v1.size(), static_cast<int>(v2.size()));
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}
+			v1.insert(v1.begin() + 5, 20, 22);
+			v2.insert(v2.begin() + 5, 20, 22);
+			Assert::AreEqual(v1.size(), static_cast<int>(v2.size()));
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}
+			/*
+			v1.insert(v1.begin() + 5, v1.begin(), v1.end());
+			v2.insert(v2.begin() + 5, v2.begin(), v2.end());
+			Assert::AreEqual(v1.size(), static_cast<int>(v2.size()));
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}*/
+			v1.insert(v1.begin(), 10);
+			Assert::AreEqual(v1.at(0), 10);
+			v1.insert(v1.begin()+3, 444);
+			Assert::AreEqual(v1.at(3), 444);
 
 		}
 	};
