@@ -405,7 +405,12 @@ public:
 			end_ = &data_[size_];
 		}
 	}
-
+	
+	/** Assign (range)
+	* @brief Replaces the elements with elements from range from start to end \n
+	* @param start - pointer to a start of a range \n
+	* @param end - pointer to an end of a range
+	*/
 	void assign(const T* start, const T* end) {
 		int num = end - start;
 		if (num <= capacity_) {
@@ -429,5 +434,12 @@ public:
 			begin_ = &data_[0];
 			end_ = &data_[size_];
 		}
+	}
+	/** Data
+	* @brief Returns pointer to the underlying array
+	* @return Pointer to start of the data_ array
+	*/
+	T* data() const {
+		return &data_[0];
 	}
 };

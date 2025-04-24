@@ -269,5 +269,20 @@ namespace vectortest
 				Assert::AreEqual(v1.at(i), v3.at(i));
 			}
 		}
+		TEST_METHOD(Data)
+		{
+			Logger::WriteMessage("Data");
+			myVector<int>v1(12, 21);
+			myVector<int>v2 = { 1, 2, 3, 4 };
+			myVector<double>v3;
+			v3.push_back(12.2);
+			Assert::AreEqual(v1.data(), v1.begin());
+			Assert::AreEqual(*v1.data(), 21);
+			Assert::AreEqual(v2.data(), v2.begin());
+			Assert::AreEqual(*v2.data(), 1);
+			Assert::AreEqual(v3.data(), v3.begin());
+			Assert::AreEqual(*v3.data(), 12.2);
+
+		}
 	};
 }
