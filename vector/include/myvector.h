@@ -525,7 +525,7 @@ public:
 				*it = *(it - num);
 			}
 			for (int i = num; i > 0; i--) {
-				data_[index + i - 1] = *(start+i);
+				data_[index + i - 1] = *(start + i);
 			}
 			size_ = size_ + num;
 			end_ = &data_[size_];
@@ -548,5 +548,37 @@ public:
 			size_ = size_ + num;
 			end_ = &data_[size_];
 		}
+	}
+	/**
+	* @brief Erases element at pos
+	* @param pos - pointer to a position
+	*/
+	void erase(const T* pos) {
+		if (size_ == 0) return;
+		int index = pos - begin_;
+		~data_[index];
+		for (int i = index; i < size_ - 1; i++) {
+			data_[i] = data_[i + 1];
+		}
+		size_--;
+		end_ = &data_[size_];
+	}
+	/**
+	* @brief Erases elements in range from start to end
+	* @param start - start of a range
+	* @param end - end of a range
+	*/
+	void erase(const T* start, const T* end) {
+		if (size_ == 0) return;
+		int indexstart = start - begin_;
+		int indexend = end - begin_;
+		for (int i = indexstart; i < indexend; i++) {
+			~data_[i];
+		}
+		for (int i = indexstart; i < size_ - 1; i++) {
+			data_[i] = data_[i + end - start];
+		}
+		size_ = size_ - (end - start);
+		end_ = &data_[size_];
 	}
 };

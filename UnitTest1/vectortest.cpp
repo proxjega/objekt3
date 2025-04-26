@@ -328,5 +328,33 @@ namespace vectortest
 			v1.insert(v1.begin()+3, 444);
 			Assert::AreEqual(v1.at(3), 444);
 		}
+		TEST_METHOD(Erase)
+		{
+			Logger::WriteMessage("Erase");
+			myVector<int> v1;
+			std::vector<int> v2;
+			for (int i = 0; i < 10; i++) {
+				v1.push_back(i);
+				v2.push_back(i);
+			}
+			v1.erase(v1.begin() + 5);
+			v2.erase(v2.begin() + 5);
+			Assert::AreEqual(v1.size(), static_cast<int>(v2.size()));
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}
+			v1.erase(v1.begin() + 5, v1.end());
+			v2.erase(v2.begin() + 5, v2.end());
+			Assert::AreEqual(v1.size(), static_cast<int>(v2.size()));
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}
+			myVector<int> v3 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+			myVector<int> v4 = { 1, 2, 3, 4, 6 };
+			v3.erase(v3.begin());
+			v3.erase(v3.begin() + 4);
+			v3.erase(v3.begin() + 5, v3.end());
+			Assert::AreEqual(v3.output(), v4.output());
+		}
 	};
 }
