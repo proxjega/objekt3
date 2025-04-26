@@ -552,6 +552,7 @@ public:
 	/**
 	* @brief Erases element at pos\n
 	* @param pos - pointer to a position
+	* @return Pointer following the last removed element.
 	*/
 	T* erase(const T* pos) {
 		if (size_ == 0) return end_;
@@ -568,6 +569,7 @@ public:
 	* @brief Erases elements in range from start to end\n
 	* @param start - start of a range
 	* @param end - end of a range
+	* @return Pointer following the last removed element.
 	*/
 	T* erase(const T* start, const T* end) {
 		if (size_ == 0) return end_;
