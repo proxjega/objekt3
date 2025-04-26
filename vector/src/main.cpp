@@ -8,7 +8,7 @@ int main()
     _setmode(_fileno(stdout), _O_U8TEXT);
     _setmode(_fileno(stderr), _O_U8TEXT);
     srand(time(NULL));
-    vector<Student> grupe, vargsiukai, kietiakai;
+    myVector<Student> grupe, vargsiukai, kietiakai;
     float galutinisVid = 0;
     float mediana = 0;
     char menu;
@@ -20,7 +20,7 @@ int main()
     std::ofstream test;
 
     
-    /*myVector<wstring> v1(10,L"s");
+    myVector<wchar_t> v1(10, L'c');
     v1.resize(19);
     wcout << "size: " << v1.size() << endl;
     wcout << "capacity: " << v1.capacity() << endl;
@@ -35,7 +35,7 @@ int main()
     }
     wcout << v1.output();
     wcout << "\n--------\nend\n";
-    exit(0);*/
+    exit(0);
 
 
     while (check == true) {

@@ -300,3 +300,155 @@ void TestFunction2(arr1& grupe, arr2& vargsiukai) {
 	output.clear();
     wcout << L"Testas baigtas. Patikrinkite spartos_tyrimas aplanka\n";
 }
+
+template<class T>
+void Case1(T& grupe) {
+    wstring name, surname;
+    vector<int> marks;
+    int examMark;
+    system("cls");
+    wcout << L"Įveskite studento vardą:\n";
+    wcin >> name;
+    wcout << L"Įveskite studento pavardę:\n";
+    wcin >> surname;
+    wcout << L"Įveskite pažymius (0 - pabaigti)\n";
+    while (true) {
+        try {
+            int mark = InputMark();
+            if (mark == 0) {
+                if (marks.size() != 0) {
+                    break;
+                }
+                else throw L"\007Įveskite bent vieną pažymį";
+                continue;
+            }
+            marks.push_back(mark);
+        }
+        catch (const wchar_t e[]) {
+            wcerr << e << endl;
+            continue;
+        }
+        catch (...) {
+            wcerr << L"\007Nežinoma klaida" << endl;
+            continue;
+        }
+    }
+    wcout << L"Įveskite egzamino pažymį:\n";
+    while (true) {
+        try {
+            examMark = InputExamMark();
+            break;
+        }
+        catch (const wchar_t e[]) {
+            wcerr << e << endl;
+            continue;
+        }
+        catch (...) {
+            wcerr << L"\007Nežinoma klaida" << endl;
+            continue;
+        }
+    }
+    Student student(name, surname, marks, examMark);
+    grupe.push_back(student);
+}
+
+template<class T>
+void Case2(T& grupe) {
+    wstring name, surname;
+    int markNum;
+    system("cls");
+    wcout << L"Įveskite studento vardą:\n";
+    wcin >> name;
+    wcout << L"Įveskite studento pavardę:\n";
+    wcin >> surname;
+    wcout << L"Kiek pažymių generuoti?\n";
+    while (true) {
+        try {
+            markNum = InputMarkNum();
+            break;
+        }
+        catch (const wchar_t e[]) {
+            wcerr << e << endl;
+            continue;
+        }
+        catch (...) {
+            wcerr << L"\007Nežinoma klaida" << endl;
+            continue;
+        }
+    }
+    Student student(name, surname, markNum);
+    grupe.push_back(student);
+}
+
+template<class T>
+void Case3(T& grupe) {
+    int markNum;
+    system("cls");
+    wcout << L"Kiek pažymiu generuoti?\n";
+    while (true) {
+        try {
+            markNum = InputMarkNum();
+            break;
+        }
+        catch (const wchar_t e[]) {
+            wcerr << e << endl;
+            continue;
+        }
+        catch (...) {
+            wcerr << L"\007Nežinoma klaida" << endl;
+            continue;
+        }
+    }
+    Student student(markNum);
+    grupe.push_back(student);
+}
+
+template<class T>
+void Case4(T& grupe) {
+    wstring inputFileName;
+    wifstream inputFile;
+    system("cls");
+    wcout << L"Iš kokio failo nuskaityti duomenis?\n\n";
+    system("dir /b *.txt");
+    wcin >> inputFileName;
+    try {
+        inputFile.open(inputFileName);
+        if (!inputFile) {
+            throw L"\007Failas nerastas";
+        }
+        Readfile(inputFile, grupe);
+        wcout << L"\nDuomenys nuskaityti.\n";
+    }
+    catch (const wchar_t* e) {
+        wcerr << e << endl;
+        return;
+    }
+    catch (...) {
+        wcerr << L"\007Nežinoma klaida" << endl;
+        return;
+    }
+}
+
+template<class arr1, class arr2, class arr3>
+void Case5(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
+    int strategy;
+    wcout << L"Kokią strategiją naudoti? 1 ar 2?\n";
+    wcout << L"Arba norite ištestuoti Rule of Five? 3\n";
+    while (true) {
+        try {
+            strategy = InputStrategy();
+            break;
+        }
+        catch (const wchar_t e[]) {
+            wcerr << e << endl;
+            continue;
+        }
+        catch (...) {
+            wcerr << L"\007Nežinoma klaida" << endl;
+            continue;
+        }
+    }
+    if (strategy == 1) TestFunction(grupe, vargsiukai, kietiakai);
+    if (strategy == 2) TestFunction2(grupe, vargsiukai);
+    if (strategy == 3) TestRuleOfFive();
+}

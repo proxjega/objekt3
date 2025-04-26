@@ -281,7 +281,7 @@ public:
 	*/
 	void pop_back() {
 		if (size_ == 0) return;
-		~data_[size_ - 1];
+		data_[size_ - 1].~T();
 		size_ = size_-1;
 		end_ = end_-1;
 	}
@@ -389,7 +389,7 @@ public:
 				end_ = &data_[size_];
 			}
 			for (int i = 0; i < num; i++) {
-				~data_[i];
+				data_[i].~T();
 				data_[i] = val;
 			}
 		}
@@ -419,7 +419,7 @@ public:
 				end_ = &data_[size_];
 			}
 			for (int i = 0; i < num; i++) {
-				~data_[i];
+				data_[i].~T();
 				data_[i] = *(start+i);
 			}
 		}
@@ -553,33 +553,35 @@ public:
 	* @brief Erases element at pos\n
 	* @param pos - pointer to a position
 	*/
-	void erase(const T* pos) {
-		if (size_ == 0) return;
+	T* erase(const T* pos) {
+		if (size_ == 0) return end_;
 		int index = pos - begin_;
-		~data_[index];
+		data_[index].~T();
 		for (int i = index; i < size_ - 1; i++) {
 			data_[i] = data_[i + 1];
 		}
 		size_--;
 		end_ = &data_[size_];
+		return &data_[index + 1];
 	}
 	/**
 	* @brief Erases elements in range from start to end\n
 	* @param start - start of a range
 	* @param end - end of a range
 	*/
-	void erase(const T* start, const T* end) {
-		if (size_ == 0) return;
+	T* erase(const T* start, const T* end) {
+		if (size_ == 0) return end_;
 		int indexstart = start - begin_;
 		int indexend = end - begin_;
 		for (int i = indexstart; i < indexend; i++) {
-			~data_[i];
+			data_[i].~T();
 		}
 		for (int i = indexstart; i < size_ - 1; i++) {
 			data_[i] = data_[i + end - start];
 		}
 		size_ = size_ - (end - start);
 		end_ = &data_[size_];
+		return &data_[indexend];
 	}
 	/**
 	* @brief Resizes the vector to a size\n
@@ -589,7 +591,7 @@ public:
 		if (size == size_) return;
 		else if (size < size_) {
 			for (int i = size; i < size_; i++) {
-				~T();
+				data_[i].~T();
 			}
 			size_ = size;
 			end_ = &data_[size_];
@@ -628,7 +630,7 @@ public:
 		if (size == size_) return;
 		else if (size < size_) {
 			for (int i = size; i < size_; i++) {
-				~data_[i];
+				data_[i].~T();
 			}
 			size_ = size;
 			end_ = &data_[size_];
