@@ -511,4 +511,42 @@ public:
 			end_ = &data_[size_];
 		}
 	}
+	/**
+	* @brief Inserts copies from a range from start to end into place before pos
+	* @param pos - pointer to position
+	* @param start - pointer to a start of a range
+	* @param end - pointer to an end of a range
+	*/
+	void insert(const T* pos, const T* start, const T* end) {
+		int index = pos - begin_;
+		int num = end - start;
+		if (size_ + num <= capacity_) {
+			for (auto it = end_ + num - 1; it != pos; it--) {
+				*it = *(it - num);
+			}
+			for (int i = num; i > 0; i--) {
+				data_[index + i - 1] = *(start+i);
+			}
+			size_ = size_ + num;
+			end_ = &data_[size_];
+		}
+		else {
+			capacity_ = capacity_ + num;
+			T* temp = new T[capacity_];
+			for (int i = 0; i != index; i++) {
+				temp[i] = data_[i];
+			}
+			for (int i = index; i < index + num; i++) {
+				temp[i] = *(start + i - index);
+			}
+			for (int i = index; i < size_; i++) {
+				temp[i + num] = data_[i];
+			}
+			delete[] data_;
+			data_ = temp;
+			begin_ = data_;
+			size_ = size_ + num;
+			end_ = &data_[size_];
+		}
+	}
 };

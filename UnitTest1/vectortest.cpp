@@ -310,13 +310,19 @@ namespace vectortest
 			for (int i = 0; i < v1.size(); i++) {
 				Assert::AreEqual(v1.at(i), v2.at(i));
 			}
-			/*
-			v1.insert(v1.begin() + 5, v1.begin(), v1.end());
-			v2.insert(v2.begin() + 5, v2.begin(), v2.end());
-			Assert::AreEqual(v1.size(), static_cast<int>(v2.size()));
+			myVector<int> v3 = { 1 };
+			std::vector<int> v4 = { 1 };
+			v3.insert(v3.begin(), v1.begin(), v1.end());
+			v4.insert(v4.begin(), v2.begin(), v2.end());
+			v1.insert(v1.begin(), v1.begin(), v1.end());
+			v2.insert(v2.begin(), v2.begin(), v2.end());
+			Assert::AreEqual(v3.size(), static_cast<int>(v4.size()));
+			for (int i = 0; i < v3.size(); i++) {
+				Assert::AreEqual(v3.at(i), v4.at(i));
+			}
 			for (int i = 0; i < v1.size(); i++) {
 				Assert::AreEqual(v1.at(i), v2.at(i));
-			}*/
+			}
 			v1.insert(v1.begin(), 10);
 			Assert::AreEqual(v1.at(0), 10);
 			v1.insert(v1.begin()+3, 444);
