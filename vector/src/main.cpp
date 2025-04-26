@@ -20,16 +20,12 @@ int main()
     std::ofstream test;
 
     
-    myVector<int> v1(10,12);
-    myVector<int> v3(v1.begin(), v1.end());
-    v1.push_back(5);
-    v1.push_back(5);
-    v1.push_back(5);
-
+    /*myVector<wstring> v1(10,L"s");
+    v1.resize(19);
     wcout << "size: " << v1.size() << endl;
     wcout << "capacity: " << v1.capacity() << endl;
-    wcout << "end adress: " << v1.end() << endl;
-    wcout << "last elem address: " << &v1[v1.size()-1] << endl;
+    wcout << L"end adress: " << v1.end() << endl;
+    wcout << L"last elem address: " << &v1[v1.size()-1] << endl;
     wcout << "elem num " << v1.end() - v1.begin() << endl;
     wcout << "iterating...\n";
     int i = 0;
@@ -39,7 +35,7 @@ int main()
     }
     wcout << v1.output();
     wcout << "\n--------\nend\n";
-    exit(0);
+    exit(0);*/
 
 
     while (check == true) {

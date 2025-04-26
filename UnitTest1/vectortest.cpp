@@ -356,5 +356,36 @@ namespace vectortest
 			v3.erase(v3.begin() + 5, v3.end());
 			Assert::AreEqual(v3.output(), v4.output());
 		}
+		TEST_METHOD(Resize)
+		{
+			Logger::WriteMessage("Resize");
+			myVector<int> v1(10,10);
+
+			std::vector<int>v2(10, 10);
+			v1.resize(4);
+			v2.resize(4);
+			Assert::AreEqual(v1.size(), 4);
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}
+			v1.resize(10);
+			v2.resize(10);
+			Assert::AreEqual(v1.size(), 10);
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}
+			v1.resize(22, 22);
+			v2.resize(22, 22);
+			Assert::AreEqual(v1.size(), 22);
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}
+			v1.resize(5);
+			v2.resize(5);
+			Assert::AreEqual(v1.size(), 5);
+			for (int i = 0; i < v1.size(); i++) {
+				Assert::AreEqual(v1.at(i), v2.at(i));
+			}
+		}
 	};
 }

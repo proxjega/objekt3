@@ -443,8 +443,8 @@ public:
 		return &data_[0];
 	}
 	/**
-	* @brief Inserts an copy of element val into place before position pos
-	* @param pos - pointer to position
+	* @brief Inserts an copy of element val into place before position pos\n
+	* @param pos - pointer to position\n
 	* @param val - value to insert
 	*/
 	void insert(const T* pos,  const T& val) {
@@ -475,9 +475,9 @@ public:
 		}
 	}
 	/**
-	* @brief Inserts a num copies of element val into place before position pos
-	* @param pos - pointer to position
-	* @param num - number of copies to insert
+	* @brief Inserts a num copies of element val into place before position pos\n
+	* @param pos - pointer to position\n
+	* @param num - number of copies to insert\n
 	* @param val - value to insert
 	*/
 	void insert(const T* pos, const int num, const T& val) {
@@ -512,9 +512,9 @@ public:
 		}
 	}
 	/**
-	* @brief Inserts copies from a range from start to end into place before pos
-	* @param pos - pointer to position
-	* @param start - pointer to a start of a range
+	* @brief Inserts copies from a range from start to end into place before pos\n
+	* @param pos - pointer to position\n
+	* @param start - pointer to a start of a range\n
 	* @param end - pointer to an end of a range
 	*/
 	void insert(const T* pos, const T* start, const T* end) {
@@ -550,7 +550,7 @@ public:
 		}
 	}
 	/**
-	* @brief Erases element at pos
+	* @brief Erases element at pos\n
 	* @param pos - pointer to a position
 	*/
 	void erase(const T* pos) {
@@ -564,7 +564,7 @@ public:
 		end_ = &data_[size_];
 	}
 	/**
-	* @brief Erases elements in range from start to end
+	* @brief Erases elements in range from start to end\n
 	* @param start - start of a range
 	* @param end - end of a range
 	*/
@@ -580,5 +580,82 @@ public:
 		}
 		size_ = size_ - (end - start);
 		end_ = &data_[size_];
+	}
+	/**
+	* @brief Resizes the vector to a size\n
+	* @param size - size to resize to
+	*/
+	void resize(const int& size) {
+		if (size == size_) return;
+		else if (size < size_) {
+			for (int i = size; i < size_; i++) {
+				~T();
+			}
+			size_ = size;
+			end_ = &data_[size_];
+		}
+		else if (size > size_) {
+			if (size <= capacity_) {
+                for (int i = size_; i < size; i++) {  
+                   data_[i] = T(); // default insertable  
+                }
+				size_ = size;
+				end_ = &data_[size_];
+			}
+			else {
+				capacity_ = size;
+				T* temp = new T[size];
+				for (int i = 0; i < size_; i++) {
+					temp[i] = data_[i];
+				}
+				for (int i = size_; i < size; i++) {
+					temp[i] = T(); //def
+				}
+				delete[] data_;
+				data_ = temp;
+				begin_ = data_;
+				size_ = size;
+				end_ = &data_[size_];
+			}
+		}
+	}
+	/**
+	* @brief Resizes the vector to a size. New elements will have value as a value.\n
+	* @param size - size to resize to. \n
+	* @param value - value to assign to new elements. 
+	*/
+	void resize(const int& size, const T& value) {
+		if (size == size_) return;
+		else if (size < size_) {
+			for (int i = size; i < size_; i++) {
+				~data_[i];
+			}
+			size_ = size;
+			end_ = &data_[size_];
+		}
+		else if (size > size_) {
+			if (size <= capacity_) {
+				for (int i = size_; i < size; i++) {
+					data_[i] = value;
+				}
+				size_ = size;
+				end_ = &data_[size_];
+			}
+			else {
+				capacity_ = size;
+				T* temp = new T[size];
+				for (int i = 0; i < size_; i++) {
+					temp[i] = data_[i];
+				}
+				for (int i = size_; i < size; i++) {
+					temp[i] = value;
+				}
+				delete[] data_;
+				data_ = temp;
+				begin_ = data_;
+				size_ = size;
+				end_ = &data_[size_];
+			}
+		}
 	}
 };
