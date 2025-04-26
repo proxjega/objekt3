@@ -434,6 +434,7 @@ void Case5(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
     int strategy;
     wcout << L"Kokią strategiją naudoti? 1 ar 2?\n";
     wcout << L"Arba norite ištestuoti Rule of Five? 3\n";
+    wcout << L"Arba norite ištestuoti myVector vs std::vector? 4\n";
     while (true) {
         try {
             strategy = InputStrategy();
@@ -451,4 +452,5 @@ void Case5(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
     if (strategy == 1) TestFunction(grupe, vargsiukai, kietiakai);
     if (strategy == 2) TestFunction2(grupe, vargsiukai);
     if (strategy == 3) TestRuleOfFive();
+    if (strategy == 4) VectorTest();
 }

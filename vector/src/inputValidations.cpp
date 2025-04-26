@@ -73,7 +73,7 @@ int InputTestNum() {
 int InputStrategy() {
     int value;
     while (true) {
-        if (cin >> value && value <= 3 && value >= 1) {
+        if (cin >> value && value <= 4 && value >= 1) {
             return value;
         }
         else {

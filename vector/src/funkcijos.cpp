@@ -198,3 +198,26 @@ void TestRuleOfFive() {
 	system("notepad.exe overloadedOperatorTest.txt");
 }
 
+void VectorTest() {
+	wcout << L"Testing vector...\n";
+    for (int i = 1; i <= 100000; i *= 10) {
+        unsigned int sz = 10000; // 100000, 1000000, 10000000, 100000000
+		wcout << L"--------------------------------\n";
+        std::chrono::time_point<std::chrono::system_clock> start1 = std::chrono::system_clock::now();
+        std::vector<int> v1;
+        for (int i = 1; i <= sz*i; ++i) v1.push_back(i);
+        std::chrono::time_point<std::chrono::system_clock> end1 = std::chrono::system_clock::now();
+
+        std::chrono::time_point<std::chrono::system_clock> start2 = std::chrono::system_clock::now();
+        myVector<int> v2;
+        for (int i = 1; i <= sz*i; ++i) v2.push_back(i);
+        std::chrono::time_point<std::chrono::system_clock> end2 = std::chrono::system_clock::now();
+
+        std::chrono::duration<double> elapsed_seconds1 = end1 - start1;
+        std::chrono::duration<double> elapsed_seconds2 = end2 - start2;
+		std::wcout << L"Test " << i*sz << L" elements\n";
+        std::wcout << L"std::vector<int> time: " << elapsed_seconds1.count() << L"s\n";
+        std::wcout << L"myVector<int> time: " << elapsed_seconds2.count() << L"s\n";
+        std::wcout << L"Difference: " << (elapsed_seconds1.count() - elapsed_seconds2.count()) << L"s\n";
+    }
+}

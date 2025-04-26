@@ -60,4 +60,5 @@ bool InputSortType();
 //void Case4(vector<Student>& grupe);
 //void Case5(vector<Student>& grupe, vector<Student>& vargsiukai, vector<Student>& kietiakai);
 void TestRuleOfFive();
+void VectorTest();
 
