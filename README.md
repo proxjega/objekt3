@@ -57,7 +57,9 @@ Trina paskutini elementa. Jeigu vektorius tuscias - nieko nedaro. Veikimo princi
 ![image](https://github.com/user-attachments/assets/b9c59e5b-2d32-472a-8edd-fd5a22af4c29)   
 Pasirodo, std::vector siek tiek laimi
 #### 2 testas: programos veikimo laikas:
-
+![image](https://github.com/user-attachments/assets/880ed238-88ea-4c7c-b4ad-c6efc2a4143d)   
+Matosi, kad myVector yra greitesnis. Kai irasu dydis yra mazas tai yra beveik nepastebima, bet kai irasu dydis didesnis - skirtumas pastebimas.
+### Visa informacija yra pasiekiama aplanke "spartos_tyrimas/vector vs myVector
 
 # Dokumentacija
 ### Klasės "Studentas" ir klases "myVector" dokumentacijos yra pasiekiamos aplanke "Documentation"
