@@ -1,0 +1,93 @@
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.609608 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.203231 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.368955 s
+Visos programos veikimo laikas is 100000 irasu: 1.18179 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.596296 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.14292 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.328758 s
+Visos programos veikimo laikas is 100000 irasu: 1.06797 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.591361 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.142529 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.32833 s
+Visos programos veikimo laikas is 100000 irasu: 1.06222 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.591338 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.142377 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.329258 s
+Visos programos veikimo laikas is 100000 irasu: 1.06297 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.594381 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.141047 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.327172 s
+Visos programos veikimo laikas is 100000 irasu: 1.0626 s
+
+----------------------------------------------------------------------------------------------------------------
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.08914 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 2.65991 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.50824 s
+Visos programos veikimo laikas is 1000000 irasu: 12.2573 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.16375 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 1.97328 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.40321 s
+Visos programos veikimo laikas is 1000000 irasu: 11.5402 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.1557 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 1.98371 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.43429 s
+Visos programos veikimo laikas is 1000000 irasu: 11.5737 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.21825 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 2.04461 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.59848 s
+Visos programos veikimo laikas is 1000000 irasu: 11.8613 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.48574 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 1.98688 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.46658 s
+Visos programos veikimo laikas is 1000000 irasu: 11.9392 s
+
+----------------------------------------------------------------------------------------------------------------
+Programos veikimas: 
+Duomenu nuskaitymas is 10000000 irasu: 63.2146 s
+Studentu rusiavimas i 2 grupes is 10000000 irasu: 32.3336 s
+Surusiuotu studentu isvedimas is 10000000 irasu: 34.5739 s
+Visos programos veikimo laikas is 10000000 irasu: 130.122 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 10000000 irasu: 63.2935 s
+Studentu rusiavimas i 2 grupes is 10000000 irasu: 23.8308 s
+Surusiuotu studentu isvedimas is 10000000 irasu: 35.6084 s
+Visos programos veikimo laikas is 10000000 irasu: 122.733 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 10000000 irasu: 62.4385 s
+Studentu rusiavimas i 2 grupes is 10000000 irasu: 24.1507 s
+Surusiuotu studentu isvedimas is 10000000 irasu: 35.3994 s
+Visos programos veikimo laikas is 10000000 irasu: 121.989 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 10000000 irasu: 62.3612 s
+Studentu rusiavimas i 2 grupes is 10000000 irasu: 24.0303 s
+Surusiuotu studentu isvedimas is 10000000 irasu: 35.3664 s
+Visos programos veikimo laikas is 10000000 irasu: 121.758 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 10000000 irasu: 63.803 s
+Studentu rusiavimas i 2 grupes is 10000000 irasu: 24.7209 s
+Surusiuotu studentu isvedimas is 10000000 irasu: 35.1523 s
+Visos programos veikimo laikas is 10000000 irasu: 123.676 s
+
+----------------------------------------------------------------------------------------------------------------
