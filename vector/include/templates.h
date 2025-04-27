@@ -102,7 +102,7 @@ void TestFunction(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
     double readMean = 0, sortMean = 0, printMean = 0, allMean = 0;
     std::wofstream researchResults("tyrimas1StrategijaClass.txt", std::ios::app);
     wstringstream output; 
-	wstring containers[] = {L"Vector", L"Deque", L"List"};
+	wstring containers[] = {L"Vector", L"Deque", L"List", L"myVector"};
     int containerNum = 0;
 
     wcout << L"Is kiek irasu testuoti programa?";
@@ -143,8 +143,11 @@ void TestFunction(arr1& grupe, arr2& vargsiukai, arr3& kietiakai) {
 			testFile.open("tyrimasListClass.txt", std::ios::app);
 			containerNum = 2;
 		}
-        else
-            testFile.open("tyrimasUnknownClass.txt", std::ios::app); // Default fallback
+        else {
+            testFile.open("tyrimasMyVectorClass.txt", std::ios::app); // Default fallback
+            containerNum = 3;
+        }
+        
 
     
         testFile << "Programos veikimas: \n";

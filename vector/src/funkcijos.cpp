@@ -200,24 +200,42 @@ void TestRuleOfFive() {
 
 void VectorTest() {
 	wcout << L"Testing vector...\n";
+    std::ofstream averageResults("myVectorAverageResults.txt");
+    std::ofstream testResults("myVectorTestResults.txt");
     for (int i = 1; i <= 100000; i *= 10) {
-        unsigned int sz = 10000; // 100000, 1000000, 10000000, 100000000
-		wcout << L"--------------------------------\n";
-        std::chrono::time_point<std::chrono::system_clock> start1 = std::chrono::system_clock::now();
-        std::vector<int> v1;
-        for (int i = 1; i <= sz*i; ++i) v1.push_back(i);
-        std::chrono::time_point<std::chrono::system_clock> end1 = std::chrono::system_clock::now();
+        double avgStd = 0, avgMyVector = 0, avgDifference = 0;
+        for (int j = 0; j < 5; j++) {
+            unsigned int sz = 10000; // 100000, 1000000, 10000000, 100000000
+            testResults << "--------------------------------\n";
+            std::chrono::time_point<std::chrono::system_clock> start1 = std::chrono::system_clock::now();
+            std::vector<int> v1;
+            for (int i = 1; i <= sz * i; ++i) v1.push_back(i);
+            std::chrono::time_point<std::chrono::system_clock> end1 = std::chrono::system_clock::now();
 
-        std::chrono::time_point<std::chrono::system_clock> start2 = std::chrono::system_clock::now();
-        myVector<int> v2;
-        for (int i = 1; i <= sz*i; ++i) v2.push_back(i);
-        std::chrono::time_point<std::chrono::system_clock> end2 = std::chrono::system_clock::now();
+            std::chrono::time_point<std::chrono::system_clock> start2 = std::chrono::system_clock::now();
+            myVector<int> v2;
+            for (int i = 1; i <= sz * i; ++i) v2.push_back(i);
+            std::chrono::time_point<std::chrono::system_clock> end2 = std::chrono::system_clock::now();
 
-        std::chrono::duration<double> elapsed_seconds1 = end1 - start1;
-        std::chrono::duration<double> elapsed_seconds2 = end2 - start2;
-		std::wcout << L"Test " << i*sz << L" elements\n";
-        std::wcout << L"std::vector<int> time: " << elapsed_seconds1.count() << L"s\n";
-        std::wcout << L"myVector<int> time: " << elapsed_seconds2.count() << L"s\n";
-        std::wcout << L"Difference: " << (elapsed_seconds1.count() - elapsed_seconds2.count()) << L"s\n";
+            std::chrono::duration<double> elapsed_seconds1 = end1 - start1;
+            std::chrono::duration<double> elapsed_seconds2 = end2 - start2;
+			avgStd += elapsed_seconds1.count();
+			avgMyVector += elapsed_seconds2.count();
+			avgDifference += (elapsed_seconds1.count() - elapsed_seconds2.count());
+            testResults << "Test " << i * sz << " elements\n";
+            testResults << "std::vector<int> time: " << elapsed_seconds1.count() << "s\n";
+            testResults << "myVector<int> time: " << elapsed_seconds2.count() << "s\n";
+            testResults << "Difference: " << (elapsed_seconds1.count() - elapsed_seconds2.count()) << "s\n";
+        }
+		avgStd = avgStd / 5.0;
+		avgMyVector = avgMyVector / 5.0;
+		avgDifference = avgDifference / 5.0;
+		averageResults << (i * 10000) << " elements: \n";
+		averageResults << "Average time for std::vector<int>: " << avgStd << "s\n";
+		averageResults << "Average time for myVector<int>: " << avgMyVector << "s\n";
+		averageResults << "Average difference: " << avgDifference << "s\n";
+		averageResults << "--------------------------------\n";
+		testResults.close();
+		averageResults.close();
     }
 }
