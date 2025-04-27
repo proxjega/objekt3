@@ -7,6 +7,43 @@
 - Windows 10 x64bit ar naujesnė versija
 - Instaliuotas CMake
 
+# myVector klase:
+### Buvo sukurta alternatyva klasei std::vector - **myVector**
+### Konteineris atlieka tas pacias funkcijas, kaip ir std::vector.
+### Keliu metodu pavyzdziai:
+- Reserve   
+ ![image](https://github.com/user-attachments/assets/3d4678d6-5b56-47c3-a87e-00392747bd0a)   
+Rezervuoja atminti vektoriui. Jeigu duotas skaicius yra mazesnis negu dabartinis **capacity_** - funkcija nieko nedaro. Kitu atveju rezervuoja tiek atminties, kiek buvo paduota su parametru **num**. Veikimo principas:  
+1) Rezervuojama nauja atmintis  
+2) Kopijuojami duomenis is senos atminties  
+3) Sena atmintis trinama, jos rodykle perkeliama i nauja atminti.  
+4) Atnaujinami visi iteratoriai (begin_, end_). **size_** nesikeicia.
+- Shrink_to_fit  
+![image](https://github.com/user-attachments/assets/ac0ffd92-f21f-4384-8d53-5fa90f891299)  
+Sumazina rezervuota atminti iki tiek, kiek uzimta dabar (size_ elementu). Jeigu uzimta kiek rezervuota (capacity_==size_) - nieko nedaro. Veikimo principas:
+1) Keicia **capacity_** iki **size_**
+2) Rezervuoja nauja atminti
+3) Kopijuoja duomenis is senos atminties i nauja
+4) Sena atmintis atlaisvinama, jos rodykle perkeliama i nauja atminti
+5) Atnaujinami iteratoriai.
+- Operatorius = su std::initializer_list  
+![image](https://github.com/user-attachments/assets/5c9416ed-b892-4f00-8219-7b1dd683764b)  
+Priskiria vektoriui reiksmes, kurios yra std::initalizer_list. Veikimo principas:  
+1) Iskviecia destruktoriu (kad saugiai atlaisvinti sena atminti)
+2) Priskiria vektoriui toki **size_** ir **capacity_**, kiek elementu yra list'e
+3) Rezervuoja atminti
+4) Kopijuoja elementus is list'o i rezervuota atminti
+5) Atnaujina iteratorius
+6) Grazina vektoriu.
+- push_back  
+![image](https://github.com/user-attachments/assets/e696b0d7-1748-4fec-963e-63e99a4a43e8)
+Ideda reiksme i vektoriaus gala. Veikimo principas:  
+1) Tikrina, ar yra rezervuota atmintis. Jei jos nera - rezervuoja
+2) Jeigu vektoriuje nera elementu - ideda pirma elementa, atnaujina **size_** ir iteratorius
+3) Jei vektoriuje yra elementai - tikrina, ar **size_** == **capacity_**.  
+3.1 Jei taip - rezervuoja nauja atminti **capacity_\*2** elementams, kopijuoja elementus, atlaisvina sena atminti, perkelia rodykle, atnaujina iteratorius.  
+3.2 Jei ne - ideda nauja elementa i saraso gala, perkelia iteratoriu **end_**, atnaujina **size_**  
+
 # Dokumentacija
 ### Klasės "Studentas" Dokumentacija yra pasiekiama aplanke "Documentation"
 - Yra HTML, LaTex ir .PDF formatai
