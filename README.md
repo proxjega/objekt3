@@ -36,13 +36,20 @@ Priskiria vektoriui reiksmes, kurios yra std::initalizer_list. Veikimo principas
 5) Atnaujina iteratorius
 6) Grazina vektoriu.
 - push_back  
-![image](https://github.com/user-attachments/assets/e696b0d7-1748-4fec-963e-63e99a4a43e8)
+![image](https://github.com/user-attachments/assets/e696b0d7-1748-4fec-963e-63e99a4a43e8)  
 Ideda reiksme i vektoriaus gala. Veikimo principas:  
 1) Tikrina, ar yra rezervuota atmintis. Jei jos nera - rezervuoja
 2) Jeigu vektoriuje nera elementu - ideda pirma elementa, atnaujina **size_** ir iteratorius
 3) Jei vektoriuje yra elementai - tikrina, ar **size_** == **capacity_**.  
 3.1 Jei taip - rezervuoja nauja atminti **capacity_\*2** elementams, kopijuoja elementus, atlaisvina sena atminti, perkelia rodykle, atnaujina iteratorius.  
-3.2 Jei ne - ideda nauja elementa i saraso gala, perkelia iteratoriu **end_**, atnaujina **size_**  
+3.2 Jei ne - ideda nauja elementa i saraso gala, perkelia iteratoriu **end_**, atnaujina **size_**
+- pop_back  
+![image](https://github.com/user-attachments/assets/b9fe830f-666d-4f1d-a3d7-414398f0f564)  
+Trina paskutini elementa. Jeigu vektorius tuscias - nieko nedaro. Veikimo principas:  
+1) Tikrina ar **size_** yra nulis. Jeigu taip - nieko nedaro.
+2) Kviecia paskutinio elemento destruktoriu (jei jis yra)
+3) Mazina **size_**
+4) Perkelia iteratoriu **end_**
 
 # Dokumentacija
 ### Klasės "Studentas" Dokumentacija yra pasiekiama aplanke "Documentation"
