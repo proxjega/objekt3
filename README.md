@@ -51,17 +51,28 @@ Trina paskutini elementa. Jeigu vektorius tuscias - nieko nedaro. Veikimo princi
 3) Mazina **size_**
 4) Perkelia iteratoriu **end_**
 
+# myVector klases spartos tyrimas
+### myVector klase buvo protestuota, lyginant su std::vector
+#### 1 testas: kiek vidutiniškai laiko užtrunka std::vector tipo ir myVector tipo tuščius vektorius užpildyti: 10000, 100000, 1000000, 10000000 ir 100000000 int elementų naudojant push_back() funkciją:
+![image](https://github.com/user-attachments/assets/b9c59e5b-2d32-472a-8edd-fd5a22af4c29)   
+Pasirodo, std::vector siek tiek laimi
+#### 2 testas: programos veikimo laikas:
+
+
 # Dokumentacija
-### Klasės "Studentas" Dokumentacija yra pasiekiama aplanke "Documentation"
-- Yra HTML, LaTex ir .PDF formatai
+### Klasės "Studentas" ir klases "myVector" dokumentacijos yra pasiekiamos aplanke "Documentation"
+- Yra HTML, LaTex ir .pdf formatai
 - Sukurta naudojant DoxyGen
 
 # Unit tests
-### Klasė "Studentas" buvo protestuota naudojant CPP unit tests. 
+### Klasė "Studentas" ir klase "myVector" buvo protestuotos naudojant CPP unit tests. 
 #### Testo pavyzdys:   
 ![image](https://github.com/user-attachments/assets/b6429876-95ae-4f05-8bca-96fbb6bc1cf3)
-#### Visus testus klase praejo:   
+#### Visus testus klase "Studentas" praejo:   
 ![image](https://github.com/user-attachments/assets/caadca10-bc31-45cd-8a53-6a3d3fe3aeda)
+#### Klase "myVector" irgi:
+![image](https://github.com/user-attachments/assets/1e66175c-046b-44e8-b5f5-3cbefa968c26)
+#### Visi testai yra pasiekiami aplanke "UnitTest1"
 
 # v1.5:  Abstrakti bazinė klasė
 ### Buvo sukurta abstrakti bazinė klasė "Human"
@@ -111,8 +122,12 @@ Išveda studento pavardę, vardą, po to vidurkį ir medianą.
 ## Visa informacija ir kiekvieno testo laikai yra pasiekiama aplanke "spartos_tyrimas"
 
 # Versijos:
-## v2.0
+## v3.0
 - Naujausia versija
+- Sukurtas konteineris "myVector", alternatyva std::vector
+- Konteineris protestuotas, sukurta dokumentacija
+- Pridetas setup.exe
+## v2.0
 - Atliktas klases testavimas naudojant CPP Unit tests
 - Sukurta klases dokumentacija
 ## v1.5
