@@ -1,11 +1,24 @@
 # Naudojimo instrukcija:
-1. Yra aplankas vector su programa.
-2. Kad paleisti programą, jums reikia įeiti į tą aplanką ir ten paleisti runme.bat
-3. Programa turi atsidaryti terminale, taip pat ir sukurti projektą jūsų IDE
+### Yra 2 budai paleisti programa:
+## Naudojant installeri:
+1) Ieiti i "Setup" aplanka
+2) Paleisti **setup.exe**
+3) ![image](https://github.com/user-attachments/assets/95aeb60d-5b32-4406-b10b-e08b2695dd8f)
+4) Pasirinkite kur instaliuoti, taip pat ar instaliuoti visiems useriams, ar tik vienam:  
+![image](https://github.com/user-attachments/assets/818b2207-0cd8-4814-91bd-78d6b9497309)
+5) ![image](https://github.com/user-attachments/assets/7f364217-04ae-43dc-a18a-f014e98860cd)
+6) Kai instaleris paprasys admino teises, paspauskite "Yes"
+#### Instaleris instaliuos programa, taip pat sukurti nuoroda jusu desktope ir aplanka *Start Menu*
+
+## Sukompiliuoti paciam (naudojant CMake)
+1) Ieiti i aplanka "vector"
+2) Paspausti **runme.bat**
+#### Programa bus sukompiliuota ir paleista, taip pat bus sukurtas projektas jusu IDE
 
 # Reikalavimai:
 - Windows 10 x64bit ar naujesnė versija
-- Instaliuotas CMake
+- Instaliuotas CMake (Kompiliavimui)
+- Microsoft Visual C++
 
 # myVector klase:
 ### Buvo sukurta alternatyva klasei std::vector - **myVector**
