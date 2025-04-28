@@ -11,7 +11,7 @@
 #### Instaleris instaliuos programa, taip pat sukurti nuoroda jusu desktope ir aplanka *Start Menu*
 
 ## Sukompiliuoti paciam (naudojant CMake)
-1) Ieiti i aplanka "source code"
+1) Ieiti i aplanka "vector"
 2) Paspausti **runme.bat**
 #### Programa bus sukompiliuota ir paleista, taip pat bus sukurtas projektas jusu IDE
 
