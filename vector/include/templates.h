@@ -412,7 +412,7 @@ void Case4(T& grupe) {
     wifstream inputFile;
     system("cls");
     wcout << L"Iš kokio failo nuskaityti duomenis?\n\n";
-    system("dir /b *.txt");
+    system("dir /b *0.txt");
     wcin >> inputFileName;
     try {
         inputFile.open(inputFileName);
