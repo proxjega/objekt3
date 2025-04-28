@@ -1,0 +1,30 @@
+10000 elements: 
+Average time for std::vector<int>: 0.00180846s
+Average time for myVector<int>: 0.0018082s
+Average difference: 2.6e-07s
+--------------------------------
+100000 elements: 
+Average time for std::vector<int>: 0.00163418s
+Average time for myVector<int>: 0.001617s
+Average difference: 1.718e-05s
+--------------------------------
+1000000 elements: 
+Average time for std::vector<int>: 0.00150674s
+Average time for myVector<int>: 0.001571s
+Average difference: -6.426e-05s
+--------------------------------
+10000000 elements: 
+Average time for std::vector<int>: 0.00150964s
+Average time for myVector<int>: 0.0015856s
+Average difference: -7.596e-05s
+--------------------------------
+100000000 elements: 
+Average time for std::vector<int>: 0.00150332s
+Average time for myVector<int>: 0.00155598s
+Average difference: -5.266e-05s
+--------------------------------
+1000000000 elements: 
+Average time for std::vector<int>: 0.00151536s
+Average time for myVector<int>: 0.00155926s
+Average difference: -4.39e-05s
+--------------------------------

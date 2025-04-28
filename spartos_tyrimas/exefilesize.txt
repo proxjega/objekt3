@@ -1,0 +1,3 @@
+filesize(KB):	O1	O2	Ox
+struct		83	95	97
+class		97	115	117

@@ -11,7 +11,12 @@
 #include <chrono>
 #include <locale>
 #include <codecvt>
+#include "studentas.h"
+#include "templates.h"
 
+using std::wcin;
+using std::wcout;
+using std::wcerr;
 using std::cin;
 using std::cout;
 using std::endl;
@@ -28,16 +33,9 @@ using std::left;
 using std::setprecision;
 using std::fixed;
 
-struct Student {
-    std::wstring name;
-    std::wstring surname;
-    std::vector<int>marks;
-    int examMark = 0;
-    float median = 0;
-    float vid = 0;
-};
-
-template <class T>
-void Readfile(std::wifstream& inputFile, T& grupe);
-bool CompareByVid(Student a, Student b);
+bool CompareByVid(const Student &a, const Student &b);
 int InputTestNum();
+int InputMark();
+int InputMarkNum();
+int InputExamMark();
+int InputStrategy();

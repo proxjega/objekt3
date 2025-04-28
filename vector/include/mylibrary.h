@@ -15,6 +15,8 @@
 #include <codecvt>
 #include <deque>
 #include <list>
+#include "studentas.h"
+#include "myvector.h"
 
 using std::deque;
 using std::list;
@@ -39,16 +41,6 @@ using std::wofstream;
 using std::wcerr;
 using std::cerr;
 
-
-struct Student {
-    std::wstring name;
-    std::wstring surname;
-    std::vector<int>marks;
-    int examMark = 0;
-    float median = 0;
-    float vid = 0;
-};
-
 int InputMark();
 int InputMarkNum();
 int InputExamMark();
@@ -62,4 +54,11 @@ bool CompareByVid(Student a, Student b);
 bool CompareByMed(Student a, Student b);
 void FileGen(int n);
 bool InputSortType();
+//void Case1(vector<Student>& grupe);
+//void Case2(vector<Student>& grupe);
+//void Case3(vector<Student>& grupe);
+//void Case4(vector<Student>& grupe);
+//void Case5(vector<Student>& grupe, vector<Student>& vargsiukai, vector<Student>& kietiakai);
+void TestRuleOfFive();
+void VectorTest();
 

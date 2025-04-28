@@ -1,0 +1,62 @@
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.601986 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.186946 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.316027 s
+Visos programos veikimo laikas is 100000 irasu: 1.10496 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.596569 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.170637 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.318193 s
+Visos programos veikimo laikas is 100000 irasu: 1.0854 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.599192 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.179092 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.320124 s
+Visos programos veikimo laikas is 100000 irasu: 1.09841 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.593774 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.17762 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.320487 s
+Visos programos veikimo laikas is 100000 irasu: 1.09188 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 100000 irasu: 0.597668 s
+Studentu rusiavimas i 2 grupes is 100000 irasu: 0.16495 s
+Surusiuotu studentu isvedimas is 100000 irasu: 0.319339 s
+Visos programos veikimo laikas is 100000 irasu: 1.08196 s
+
+----------------------------------------------------------------------------------------------------------------
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.17327 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 2.37859 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.4195 s
+Visos programos veikimo laikas is 1000000 irasu: 11.9714 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.08975 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 2.12415 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.29299 s
+Visos programos veikimo laikas is 1000000 irasu: 11.5069 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.08758 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 2.13928 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.31127 s
+Visos programos veikimo laikas is 1000000 irasu: 11.5381 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.12776 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 2.13238 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.41313 s
+Visos programos veikimo laikas is 1000000 irasu: 11.6733 s
+
+Programos veikimas: 
+Duomenu nuskaitymas is 1000000 irasu: 6.17765 s
+Studentu rusiavimas i 2 grupes is 1000000 irasu: 2.13997 s
+Surusiuotu studentu isvedimas is 1000000 irasu: 3.39237 s
+Visos programos veikimo laikas is 1000000 irasu: 11.71 s
+
+----------------------------------------------------------------------------------------------------------------
