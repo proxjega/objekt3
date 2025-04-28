@@ -19,25 +19,6 @@ int main()
     wifstream inputFile;
     std::ofstream test;
 
-    
-    /*myVector<wchar_t> v1(10, L'c');
-    v1.resize(19);
-    wcout << "size: " << v1.size() << endl;
-    wcout << "capacity: " << v1.capacity() << endl;
-    wcout << L"end adress: " << v1.end() << endl;
-    wcout << L"last elem address: " << &v1[v1.size()-1] << endl;
-    wcout << "elem num " << v1.end() - v1.begin() << endl;
-    wcout << "iterating...\n";
-    int i = 0;
-    for (auto it = v1.begin(); it != v1.end(); ++it) {
-        wcout << i << "elem: " << *it << endl;
-        i++;
-    }
-    wcout << v1.output();
-    wcout << "\n--------\nend\n";
-    exit(0);*/
-
-
     while (check == true) {
         wcout << "---------------------------------\nMENU\n";
         wcout << L"1 - ranka įvesti duomenis\n2 - generuoti pažymius\n3 - generuoti ir pažymius ir studentų vardus, pavardės\n4 - įvesti duomenis iš failo\n5 - testavimas\n6 - baigti darbą\n---------------------------------\n";
